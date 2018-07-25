@@ -1,33 +1,36 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+  layouts:
+    header:
+      home: "Home"
+      about: "About"
+      rooms: "Rooms"
+      news: "News"
+      contact_us: "Contact Us"
+      log_in: "Log In"
+      sign_up: "Sign Up"
+      book_now: "Book Now"
+      web_name: "<span>Quat</span>lam"
+    footer:
+      get_in_touch: "Get in touch"
+      address: "Quat Lam Town, Giao Thuy District, Nam Dinh"
+      phone: " +84-696-969-6969"
+      email: "admin@chinhphu.vn"
+      email_id: "EMAIL ID"
+      home: "Home"
+      about: "About"
+      rooms: "Rooms"
+      news: "News"
+      contact_us: "Contact Us"
+      log_in: "Log In"
+      sign_up: "Sign Up"
+      now_on_instagram: "Now On Instagram"
+      copyright: "© 2017 All right reserved. Designed by Phuc."
+      top: "Top"
+      explore: "Explore"
+    application:
+      base_title: "Hotel Management"
+  static_pages:
+    home:
+      home: "Home"
+      hello: "Hello, this is our home page."
