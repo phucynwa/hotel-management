@@ -1,0 +1,4 @@
+validates:
+  email_maximum: 140
+  name_maximum: 140
+  password_minimum: 6
