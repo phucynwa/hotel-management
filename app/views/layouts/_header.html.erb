@@ -48,7 +48,12 @@
                   <% end %>
                 </li>
                 <li><a data-hover="<%= t ".about" %>" href="#"><span><%= t ".about" %></span></a></li>
-                <li><a data-hover="<%= t ".rooms" %>" href="#"><span><%= t ".rooms" %></span></a></li>
+                <li>
+                  <%= link_to rooms_path, data: {hover: t(".rooms")},
+                    class: "#{'active' if current_page?(rooms_path)}" do %>
+                    <span><%= t ".rooms" %></span>
+                  <% end %>
+                </li>
                 <li><a data-hover="<%= t ".contact_us" %>" href="#"><span><%= t ".contact_us" %></span></a></li>
                 <% if logged_in? %>
                   <li>

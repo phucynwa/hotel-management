@@ -1,0 +1,36 @@
+<tr class="user-row <%= class_type room.status %>">
+  <td><%= room.id %></td>
+  <td>
+    <%= link_to room.label, room, class: "user-name" %>
+  </td>
+  <td>
+    <%= image_tag first_image_link(room), class: "circle", size: Settings.gravatar_tiny_size %>
+  </td>
+  <td>
+    <label class="label label-<%= class_type room.status %> text-uppercase">
+      <%= room.status %>
+    </label>
+  </td>
+  <td><%= room.floor %></td>
+  <td class="action-btn">
+    <div class="btn-group">
+      <a class="submit-btn dropdown-toggle" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <%= t ".status" %> <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <% @statuses.each do |status| %>
+          <li>
+            <%= link_to status[0], admin_room_path(room, room: {status: status[0]}),
+              method: :put, class: "text-uppercase" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <% if is_admin? %>
+      <div class="btn-group">
+        <%= link_to :edit, edit_admin_room_path(room), class: "submit-btn" %>
+      </div>
+    <% end %>
+  </td>
+</tr>

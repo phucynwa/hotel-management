@@ -1,0 +1,9 @@
+<section class="user-home-wrapper">
+  <div class="inner-wrapper">
+    <h1><%= @room.label %></h1>
+    <ul>
+      <li><%= t ".floor", floor: @room.floor %></li>
+      <li><%= @room.category.name %></li>
+    </ul>
+  </div>
+</section>

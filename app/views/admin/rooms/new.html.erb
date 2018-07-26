@@ -1,0 +1,12 @@
+<% provide :title, t(".new_room") %>
+<% provide :button_text, t(".new_room") %>
+<div class="container">
+  <div class="col-md-6 contact-left-block">
+    <h3><%= raw t(".recommend") %></h3>
+    <p class="text-left"></p>
+  </div>
+  <div class="col-md-6 contact-form">
+    <h3><%= raw t(".new_room_title") %></h3>
+    <%= render "form" %>
+  </div>
+</div>

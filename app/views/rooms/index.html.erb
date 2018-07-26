@@ -1,0 +1,12 @@
+<% provide :title, t(".rooms") %>
+<section class="resort-overview-block">
+  <div class="container">
+    <div class="row">
+      <% @rooms.each_with_index do |room, index| %>
+        <%= render room, index: index%4 %>
+      <% end %>
+      <div class="clearfix"></div>
+    </div>
+    <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
+  </div>
+</section>
