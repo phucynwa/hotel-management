@@ -1,20 +1,18 @@
 class User < ApplicationRecord
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   attr_accessor :remember_token
 
   has_many :bookings, dependent: :destroy
   has_many :requests, dependent: :destroy
   has_many :ratings, dependent: :destroy
-
   has_secure_password
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, format: {with: VALID_EMAIL_REGEX},
-    length: {maximum: Settings.validates.email_maximum},
-    presence: true, uniqueness: true
+
+  validates :name, :phone, :email, :password, presence: true
+  validates :name, length: {maximum: Settings.validates.name_maximum}
+  validates :email, length: {maximum: Settings.validates.email_maximum},
+    format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, length: {minimum: Settings.validates.password_minimum},
-    presence: true, allow_nil: true
-  validates :name, length: {maximum: Settings.validates.name_maximum},
-    presence: true
-  validates :phone, presence: true
+    allow_nil: true
 
   before_save :downcase_email
 

@@ -3,3 +3,4 @@ validates:
   name_maximum: 140
   password_minimum: 6
 remember_me_checked: 1
+gravatar_size: 80
