@@ -52,19 +52,6 @@
                 <li><a data-hover="<%= t ".contact_us" %>" href="#"><span><%= t ".contact_us" %></span></a></li>
                 <% if logged_in? %>
                   <li>
-                    <%= link_to current_user, data: {hover: t(".dashboard")},
-                      class: "#{'active' if current_page?(current_user)}" do %>
-                      <span><%= t ".dashboard" %></span>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to edit_user_path(current_user),
-                      data: {hover: t(".setting")}, class: "#{'active' if
-                      current_page?(edit_user_path(current_user))}" do %>
-                      <span><%= t ".setting" %></span>
-                    <% end %>
-                  </li>
-                  <li>
                     <%= link_to logout_path, data: {hover: t(".log_out")},
                       method: :delete do %>
                       <span><%= t ".log_out" %></span>

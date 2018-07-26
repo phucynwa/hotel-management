@@ -3,6 +3,10 @@
 <div class="container">
   <div class="col-md-6 contact-left-block">
     <h3><%= raw t(".recommend") %></h3>
+    <p>
+      <%= t ".come_back" %>
+      <%= link_to t(".all_categories"), admin_categories_path, class: "link" %>
+    </p>
   </div>
   <div class="col-md-6 contact-form">
     <h3><%= raw t(".create_category_title") %></h3>

@@ -1,11 +1,5 @@
 <tr>
-  <td><%= image.id %></td>
-  <td><%= image.room_id %></td>
-  <td><%= image_tag(image.image_link, :size => "80x60") %></td>
+  <td><%= image.room.label %></td>
+  <td><%= image_tag image.image_link, size: "80x60" %></td>
   <td><%= l image.created_at, format: :own %></td>
-  <% if current_user&.staff? || current_user&.admin? %>
-    <td>
-      <%= link_to t(".delete"), image, method: :delete, data: {confirm: t(".confirm")} %>
-    </td>
-  <% end %>
 </tr>

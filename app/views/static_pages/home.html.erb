@@ -1,2 +1,2 @@
 <% provide title: t(".home") %>
-<h1><%= t ".hello" %></h1>
+<%= render "shared/user_board" if logged_in? %>

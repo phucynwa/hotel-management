@@ -25,6 +25,14 @@ module SessionsHelper
     current_user.present?
   end
 
+  def is_staff?
+    current_user&.staff? || current_user&.admin?
+  end
+
+  def is_admin?
+    current_user&.admin?
+  end
+
   def forget user
     user.forget
     cookies.delete :user_id

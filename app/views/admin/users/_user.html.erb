@@ -1,0 +1,42 @@
+<tr class="user-row <%= :locked if user.locked? %>-row">
+  <td><%= user.id %></td>
+  <td>
+    <%= link_to user, class: "user-name" do %>
+      <%= gravatar_for user, size: Settings.gravatar_tiny_size %>
+      <%= user.name %>
+    <% end %>
+    <% if user.admin? %>
+      <span class="label label-danger"><%= t "users.admin" %></span>
+    <% elsif user.staff? %>
+      <span class="label label-primary"><%= t "users.staff" %></span>
+    <% end %>
+  </td>
+  <td><%= user.email %></td>
+  <td><%= user.phone %></td>
+  <% if is_admin? && !user.admin? %>
+    <td class="action-btn">
+      <% if user.locked? %>
+        <%= form_for [:admin, user] do |f| %>
+          <%= hidden_field_tag :role, :customer %>
+          <%= f.submit t(".unlock"), class: "submit-btn", data: {confirm: t(".you_sure")} %>
+        <% end %>
+      <% else %>
+        <%= form_for [:admin, user] do |f| %>
+          <%= hidden_field_tag :role, :locked %>
+          <%= f.submit t(".lock"), class: "submit-btn", data: {confirm: t(".you_sure")} %>
+        <% end %>
+      <% end %>
+      <% if user.staff? %>
+        <%= form_for [:admin, user] do |f| %>
+          <%= hidden_field_tag :role, :customer %>
+          <%= f.submit t(".unset_staff"), class: "submit-btn", data: {confirm: t(".you_sure")} %>
+        <% end %>
+      <% else %>
+        <%= form_for [:admin, user] do |f| %>
+          <%= hidden_field_tag :role, :staff %>
+          <%= f.submit t(".set_staff"), class: "submit-btn", data: {confirm: t(".you_sure")} %>
+        <% end %>
+      <% end %>
+    </td>
+  <% end %>
+</tr>

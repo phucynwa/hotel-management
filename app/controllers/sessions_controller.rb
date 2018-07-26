@@ -7,9 +7,13 @@ class SessionsController < ApplicationController
     user = User.find_by email: params[:session][:email].downcase
     if user&.authenticate params[:session][:password]
       if user.activated?
-        log_in user
-        params[:session][:remember_me] == Settings.remember_me_checked ?
-          remember(user) : forget(user)
+        if user.locked?
+          flash[:warning] = t ".locked_account"
+        else
+          log_in user
+          params[:session][:remember_me] == Settings.remember_me_checked ?
+            remember(user) : forget(user)
+        end
         redirect_to root_path
       else
         flash[:warning] = t ".check_email_request"
