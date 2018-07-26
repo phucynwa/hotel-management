@@ -47,8 +47,12 @@
                 <li><a data-hover="<%= t ".about" %>" href="#"><span><%= t ".about" %></span></a></li>
                 <li><a data-hover="<%= t ".rooms" %>" href="#"><span><%= t ".rooms" %></span></a></li>
                 <li><a data-hover="<%= t ".contact_us" %>" href="#"><span><%= t ".contact_us" %></span></a></li>
-                <li><a data-hover="<%= t ".log_in" %>" href="#"><span><%= t ".log_in" %></span></a></li>
-                <li><a data-hover="<%= t ".sign_up" %>" href="#"><span><%= t ".sign_up" %></span></a></li>
+              <% if logged_in? %>
+                <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to t(".login"), login_path %></li>
+                <li><%= link_to t(".sign_up"), "#" %></li>
+              <% end %>
               </ul>
             </div>
           </nav>
