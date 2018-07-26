@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="media">
   <div class="media-left">
     <%= image_tag first_image_link(room), class: "media-object", size: Settings.room_image_mini_size %>
@@ -10,3 +11,17 @@
     </ul>
   </div>
 </div>
+=======
+<div class="col-md-6 col-sm-12 col-xs-12 remove-padd-<%= index % 2 == 0 ? "left" : "right" %>">
+  <div class="side-A">
+    <%= render "#{index < 2 ? 'room_image' : 'room_text'}", room: room %>
+  </div>
+  <div class="side-B">
+    <%= render "#{index > 1 ? 'room_image' : 'room_text'}", room: room %>
+  </div>
+</div>
+<div class="clear"></div>
+<% if index % 2 == 1 %>
+  <div class="col-md-12 offspace-45"></div>
+<% end %>
+>>>>>>> Add view room

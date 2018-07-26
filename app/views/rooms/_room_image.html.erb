@@ -2,11 +2,19 @@
   <div class="image">
     <%= link_to room do %>
       <% if room.images.count > 0 %>
+<<<<<<< HEAD
         <%= image_tag first_image_link(room), class: "img-responsive",
           size: Settings.room_image_normal_size %>
       <% else %>
         <%= image_tag Settings.default_image, class: "img-responsive",
           size: Settings.room_image_normal_size %>
+=======
+        <%= image_tag room.images[0].image_link, alt: "image",
+          class: "img-responsive", size: Settings.room_image_normal_size %>
+      <% else %>
+        <%= image_tag Settings.default_image, alt: "image",
+          class: "img-responsive", size: Settings.room_image_normal_size %>
+>>>>>>> Add view room
       <% end %>
     <% end %>
   </div>
