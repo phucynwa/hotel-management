@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   get "signup", to: "users#new"
   post "signup", to: "users#create"
-  resources :users, except: %i(index destroy)
   resources :password_resets, except: %i(index show destroy)
+  resources :users, except: %i(index destroy)
+  resources :account_activations, only: :edit
 end
