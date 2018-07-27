@@ -6,10 +6,10 @@ User.create! name: "Staff", email: "staff@gmail.com", phone: "0243 256 2548",
 
 50.times do
   User.create! name: Faker::Name.unique.name,
-               email: Faker::Internet.unique.email,
-               phone: Faker::PhoneNumber.phone_number,
-               password: "123123",
-               password_confirmation: "123123"
+    email: Faker::Internet.unique.email,
+    phone: Faker::PhoneNumber.phone_number,
+    password: "123123",
+    password_confirmation: "123123"
 end
 
 users = User.order(:created_at).take 6
@@ -36,8 +36,8 @@ end
 
 10.times do
   Category.create! name: Faker::Lorem.characters(5),
-                   price: Faker::Number.number 6,
-                   description: Faker::Lorem.paragraph(5)
+    price: Faker::Number.number(6),
+    description: Faker::Lorem.paragraph(5)
 end
 
 categories = Category.order(:created_at).take 6

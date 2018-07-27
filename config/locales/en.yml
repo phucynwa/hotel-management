@@ -8,6 +8,7 @@ en:
       news: "News"
       contact_us: "Contact Us"
       log_in: "Log In"
+      log_out: "Log Out"
       sign_up: "Sign Up"
       book_now: "Book Now"
       web_name: "<span>Quat</span>lam"
@@ -38,7 +39,33 @@ en:
     create:
       invalid: "Invalid email/password combination"
     new:
-      login: "Log in"
+      log_in: "Log In"
       remember: "Remember me on this computer"
       new_user: "New user ?"
-      sign_up: "Sign Up Now"
+      sign_up: "Sign up now"
+  users:
+    show:
+      user_not_exist: "User is not exist"
+    new:
+      sign_up: "Sign Up"
+      create: "Create my account"
+      recommend: "<span>Our</span> Recommend"
+      recommend_content: "If you've had an account, please <span><a href=\"/login\" class=\"link\">login</a></span>."
+      sign_up_title: "<span>Sign</span> Up"
+      invalid_action: "Invalid action."
+      login_request: "Please login first !"
+    form:
+      confirmation: "Confirmation"
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      password: "Your Password"
+      confirm_password: "Confirm Your Password"
+    create:
+      sign_up_successful: "Sign up successful !"
+  shared:
+    error_messages:
+      form_error_warning:
+        zero: "none"
+        one: "The form contains 1 error"
+        other: "The form contains %{count} errors"

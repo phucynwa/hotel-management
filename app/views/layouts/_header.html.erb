@@ -24,7 +24,7 @@
       <div class="row">
         <div class="col-md-2 col-sm-6 col-xs-6">
           <div id="logo">
-            <a href="index.html"><%= raw t(".web_name") %></a>
+            <%= link_to raw(t ".web_name"), root_path %></a>
           </div>
         </div>
         <div class="col-sm-6 visible-sm">
@@ -48,10 +48,22 @@
                 <li><a data-hover="<%= t ".rooms" %>" href="#"><span><%= t ".rooms" %></span></a></li>
                 <li><a data-hover="<%= t ".contact_us" %>" href="#"><span><%= t ".contact_us" %></span></a></li>
               <% if logged_in? %>
-                <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+                <li>
+                  <%= link_to logout_path, data: {hover: t(".log_out")}, method: :delete do %>
+                    <span><%= t ".log_out" %></span>
+                  <% end %>
+                </li>
               <% else %>
-                <li><%= link_to t(".login"), login_path %></li>
-                <li><%= link_to t(".sign_up"), "#" %></li>
+                <li>
+                  <%= link_to login_path, data: {hover: t(".log_in")} do %>
+                    <span><%= t ".log_in" %></span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to signup_path, data: {hover: t(".sign_up")} do %>
+                    <span><%= t ".sign_up" %></span>
+                  <% end %>
+                </li>
               <% end %>
               </ul>
             </div>
