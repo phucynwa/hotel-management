@@ -1,8 +1,10 @@
 User.create! name: "Admin", email: "admin@gmail.com", phone: "0243 585 2568",
-  role: 2, password: "123123", password_confirmation: "123123"
+  role: 2, password: "123123", password_confirmation: "123123",
+  activated: true, activated_at: Time.zone.now
 
 User.create! name: "Staff", email: "staff@gmail.com", phone: "0243 256 2548",
-  role: 1, password: "123123", password_confirmation: "123123"
+  role: 1, password: "123123", password_confirmation: "123123",
+  activated: true, activated_at: Time.zone.now
 
 50.times do
   User.create! name: Faker::Name.unique.name,
@@ -10,6 +12,8 @@ User.create! name: "Staff", email: "staff@gmail.com", phone: "0243 256 2548",
     phone: Faker::PhoneNumber.phone_number,
     password: "123123",
     password_confirmation: "123123"
+    activated: true
+    activated_at: Time.zone.now
 end
 
 users = User.order(:created_at).take 6
