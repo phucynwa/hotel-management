@@ -9,6 +9,8 @@ en:
       contact_us: "Contact Us"
       log_in: "Log In"
       log_out: "Log Out"
+      profile: "Profile"
+      setting: "Settings"
       sign_up: "Sign Up"
       book_now: "Book Now"
       web_name: "<span>Quat</span>lam"
@@ -40,9 +42,11 @@ en:
       invalid: "Invalid email/password combination"
     new:
       log_in: "Log In"
+      log_in_title: "<span>Log</span> In"
       remember: "Remember me on this computer"
       new_user: "New user ?"
       sign_up: "Sign up now"
+      forgot_password: (forgot password)
   users:
     show:
       user_not_exist: "User is not exist"
@@ -69,3 +73,34 @@ en:
         zero: "none"
         one: "The form contains 1 error"
         other: "The form contains %{count} errors"
+  password_resets:
+    new:
+      title: "Forgot password"
+      header: "<span>Forgot</span> password"
+      btn_submit: "Submit"
+      label_email: "Email"
+    edit:
+      label_password: "Password"
+      confirmation: "Password confirmation"
+      title: "Reset password"
+      header: "Reset password"
+      btn_update: "Update new password"
+    flash:
+      email_not_found: "Email address not found"
+      msg: "Email sent with password reset instructions"
+      password_expired: "Password reset has expired."
+      password_not_empty: "can't be empty"
+      success: "Password has been reset."
+  user_mailer:
+    password_reset:
+      header: "Password reset"
+      subject: "Reset password"
+      click_link: "To reset your password click the link below:"
+      reset_link: "Reset password"
+      content_p: "This link will expire in two hours."
+      content_p2: "If you did not request your password to be reset,
+        please ignore this email and your password will stay as it is."
+      content_1: "To reset your password click the link below:"
+      content_2: "This link will expire in two hours.
+        If you did not request your password to be reset,
+        please ignore this email and your password will stay as it is."

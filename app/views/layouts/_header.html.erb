@@ -39,7 +39,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-
             </div>
             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
               <ul class="list-unstyled nav1 cl-effect-10">
@@ -47,24 +46,34 @@
                 <li><a data-hover="<%= t ".about" %>" href="#"><span><%= t ".about" %></span></a></li>
                 <li><a data-hover="<%= t ".rooms" %>" href="#"><span><%= t ".rooms" %></span></a></li>
                 <li><a data-hover="<%= t ".contact_us" %>" href="#"><span><%= t ".contact_us" %></span></a></li>
-              <% if logged_in? %>
-                <li>
-                  <%= link_to logout_path, data: {hover: t(".log_out")}, method: :delete do %>
-                    <span><%= t ".log_out" %></span>
-                  <% end %>
-                </li>
-              <% else %>
-                <li>
-                  <%= link_to login_path, data: {hover: t(".log_in")} do %>
-                    <span><%= t ".log_in" %></span>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to signup_path, data: {hover: t(".sign_up")} do %>
-                    <span><%= t ".sign_up" %></span>
-                  <% end %>
-                </li>
-              <% end %>
+                <% if logged_in? %>
+                  <li>
+                    <%= link_to current_user, data: {hover: t(".profile")} do %>
+                      <span><%= t ".profile" %></span>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to edit_user_path(current_user), data: {hover: t(".setting")} do %>
+                      <span><%= t ".setting" %></span>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to logout_path, data: {hover: t(".log_out")}, method: :delete do %>
+                     <span><%= t ".log_out" %></span>
+                    <% end %>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to login_path, data: {hover: t(".log_in")} do %>
+                      <span><%= t ".log_in" %></span>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to signup_path, data: {hover: t(".sign_up")} do %>
+                      <span><%= t ".sign_up" %></span>
+                    <% end %>
+                  </li>
+                <% end %>
               </ul>
             </div>
           </nav>
