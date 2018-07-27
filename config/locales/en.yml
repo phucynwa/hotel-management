@@ -41,23 +41,24 @@ en:
     create:
       invalid: "Invalid email/password combination"
     new:
+      recommend: "<span>Our</span> Recommend"
       log_in: "Log In"
       log_in_title: "<span>Log</span> In"
       remember: "Remember me on this computer"
       new_user: "New user ?"
       sign_up: "Sign up now"
       forgot_password: (forgot password)
+
   users:
-    show:
-      user_not_exist: "User is not exist"
+    user_not_exist: "User is not exist"
+    invalid_action: "Invalid action."
+    login_request: "Please login first !"
     new:
       sign_up: "Sign Up"
       create: "Create my account"
       recommend: "<span>Our</span> Recommend"
       recommend_content: "If you've had an account, please <span><a href=\"/login\" class=\"link\">login</a></span>."
       sign_up_title: "<span>Sign</span> Up"
-      invalid_action: "Invalid action."
-      login_request: "Please login first !"
     form:
       confirmation: "Confirmation"
       name: "Name"
@@ -66,7 +67,16 @@ en:
       password: "Your Password"
       confirm_password: "Confirm Your Password"
     create:
-      sign_up_successful: "Sign up successful !"
+      sign_up_successful: "Sign up successful, You can log in !"
+    edit:
+      edit: "Edit user"
+      h1: "<span>Update</span> your profile"
+      save_change: "Save changes"
+      change: "Change"
+      change_avatar: "http://gravatar.com/emails"
+      pleaselogin: "Please log in"
+    update:
+      profile_update: "Profile updated"
   shared:
     error_messages:
       form_error_warning:
@@ -74,23 +84,27 @@ en:
         one: "The form contains 1 error"
         other: "The form contains %{count} errors"
   password_resets:
+    create:
+      email_not_found: "Email address not found"
+      instruction: "Email sent with password reset instructions"
+    update:
+      password_not_empty: "can't be empty"
+      success: "Password has been reset."
+    check_expiration:
+      password_expired: "Password reset has expired."
     new:
+      recommend: "<span>Our</span> Recommend"
       title: "Forgot password"
       header: "<span>Forgot</span> password"
       btn_submit: "Submit"
       label_email: "Email"
     edit:
+      recommend: "<span>Our</span> Recommend"
+      title: "Reset password"
+      header: "<span>Reset</span> password"
       label_password: "Password"
       confirmation: "Password confirmation"
-      title: "Reset password"
-      header: "Reset password"
       btn_update: "Update new password"
-    flash:
-      email_not_found: "Email address not found"
-      msg: "Email sent with password reset instructions"
-      password_expired: "Password reset has expired."
-      password_not_empty: "can't be empty"
-      success: "Password has been reset."
   user_mailer:
     password_reset:
       header: "Password reset"

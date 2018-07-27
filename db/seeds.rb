@@ -11,44 +11,53 @@ User.create! name: "Staff", email: "staff@gmail.com", phone: "0243 256 2548",
     email: Faker::Internet.unique.email,
     phone: Faker::PhoneNumber.phone_number,
     password: "123123",
-    password_confirmation: "123123"
-    activated: true
-    activated_at: Time.zone.now
+    password_confirmation: "123123", activated: true,
+    activated_at: Time.zone.now,
+    role: 0
 end
 
-users = User.order(:created_at).take 6
-10.times do
-  start_time = Faker::Time.between(Time.zone.now - 3, Time.zone.now)
-  end_time = Time.zone.now
-  status = "1"
-  users.each {|user| user.bookings.create! start_time: start_time,
-    end_time: end_time}
-end
-
-10.times do
+50.times do
+  user_id = Random.rand(50) + 1
   content = Faker::Lorem.sentence
   status = "1"
-  priority = Faker::Number.number 1
-  users.each {|user| user.requests.create! content: content, status: status,
-    priority: priority}
+  priority = Random.rand(4) + 1
+  Request.create! user_id: user_id,content: content, status: status,
+    priority: priority
 end
 
-10.times do
+50.times do
+  user_id = Random.rand(50) + 1
   content = Faker::Lorem.sentence
-  users.each {|user| user.ratings.create! content: content}
+  Rating.create! user_id: user_id, content: content
 end
 
 10.times do
   Category.create! name: Faker::Lorem.characters(5),
-    price: Faker::Number.number(6),
+    price: (Random.rand(100000) / 100) * 100,
     description: Faker::Lorem.paragraph(5)
 end
 
-categories = Category.order(:created_at).take 6
-20.times do
+40.times do
   label = Faker::Lorem.characters(5)
-  floor = Faker::Number.number 2
-  status = Faker::Number.number 1
-  categories.each {|category| category.rooms.create! label: label, floor: floor,
-    status: status}
+  floor = Random.rand(15) + 1
+  status = Random.rand(5) + 1
+  category_id = Random.rand(10) + 1
+  Room.create! label: label, floor: floor,
+    status: status, category_id: category_id
+end
+
+40.times do
+  room_id = Random.rand(40) + 1
+  image_link = Faker::Avatar.image(slug = nil, size = '730x411',
+    format = 'png', bgset = true)
+  Image.create! image_link: image_link, room_id: room_id
+end
+
+50.times do
+  user_id = Random.rand(50) + 1
+  start_time = Faker::Time.between(2.days.ago, Date.today, :day)
+  end_time = Time.zone.now
+  status = Random.rand(5) + 1
+  Booking.create! user_id: user_id, start_time: start_time, end_time: end_time,
+    status: status
 end
