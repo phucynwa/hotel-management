@@ -1,9 +1,12 @@
 <% provide :title, t(".edit") %>
 <% provide :button_text, t(".save_change") %>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3 contact-form">
-    <h1><%= raw t(".h1") %></h1>
+<div class="container">
+  <div class="col-md-6 contact-left-block">
+    <h3><%= raw t(".recommend") %></h3>
+    <p class="text-left"></p>
+  </div>
+  <div class="col-md-6 contact-form">
+    <h3><%= raw t(".update_profile") %></h3>
     <%= render "form" %>
     <div class="gravatar_edit">
       <%= gravatar_for @user %>

@@ -1,0 +1,10 @@
+<%= form_for @category do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.text_field :name, class: "form-control", placeholder: t(".name") %>
+
+  <%= f.number_field :price, class: "form-control", placeholder: t(".price") %>
+
+  <%= f.text_area :description, class: "form-control", placeholder: t(".description") %>
+
+  <%= f.submit yield(:button_text), class: "submit-btn" %>
+<% end %>

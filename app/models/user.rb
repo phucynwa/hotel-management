@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  enum role: [:admin, :staff, :customer, :locked]
 
   has_many :bookings, dependent: :destroy
   has_many :requests, dependent: :destroy

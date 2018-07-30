@@ -2,7 +2,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-
       </div>
       <div class="col-md-6"><div class="social-grid">
         <ul class="list-unstyled text-right">
@@ -60,8 +59,8 @@
                   </li>
                   <li>
                     <%= link_to edit_user_path(current_user),
-                      data: {hover: t(".setting")},
-                      class: "#{'active' if current_page?(login_path)}" do %>
+                      data: {hover: t(".setting")}, class: "#{'active' if current_page?(
+                      edit_user_path(current_user))}" do %>
                       <span><%= t ".setting" %></span>
                     <% end %>
                   </li>
