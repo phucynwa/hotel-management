@@ -40,6 +40,8 @@ en:
   sessions:
     create:
       invalid: "Invalid email/password combination"
+      invalid_action: "Invalid action !"
+      check_email_request: "Your email hasn't verified. Please active your email first."
     new:
       recommend: "<span>Our</span> Recommend"
       log_in: "Log In"
@@ -48,7 +50,8 @@ en:
       new_user: "New user ?"
       sign_up: "Sign up now"
       forgot_password: (forgot password)
-
+      invalid_action: "Invalid action !"
+      recommend: "<span>Our</span> Recommend"
   users:
     user_not_exist: "User is not exist"
     invalid_action: "Invalid action."
@@ -77,6 +80,8 @@ en:
       pleaselogin: "Please log in"
     update:
       profile_update: "Profile updated"
+      sign_up_successful: "Sign up successful ! Please check your email to activate your account."
+      sign_up_fail: "Sign up unsuccessful. Please read our warnings."
   shared:
     error_messages:
       form_error_warning:
@@ -95,7 +100,7 @@ en:
     new:
       recommend: "<span>Our</span> Recommend"
       title: "Forgot password"
-      header: "<span>Forgot</span> password"
+      header: "<span>Forgot</span> Password"
       btn_submit: "Submit"
       label_email: "Email"
     edit:
@@ -118,3 +123,13 @@ en:
       content_2: "This link will expire in two hours.
         If you did not request your password to be reset,
         please ignore this email and your password will stay as it is."
+    account_activation:
+      account_activation: "[QuatLam] Active your account, please !"
+      title: "Welcome to Quat Lam hotel !"
+      hi: "Hi %{name},"
+      content: "Welcome to the Sample App! Click on the link below to activate your account:"
+      link: "Active your account"
+  account_activations:
+    edit:
+      invalid_activation_link: "Invalid activation link."
+      account_activated: "Account activated !"

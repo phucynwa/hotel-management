@@ -42,34 +42,45 @@
             </div>
             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
               <ul class="list-unstyled nav1 cl-effect-10">
-                <li><a data-hover="<%= t ".home" %>" class="active" href="#"><span><%= t ".home" %></span></a></li>
+                <li>
+                  <%= link_to root_path, data: {hover: t(".home")},
+                    class: "#{'active' if current_page?(root_path)}" do %>
+                    <span><%= t ".home" %></span>
+                  <% end %>
+                </li>
                 <li><a data-hover="<%= t ".about" %>" href="#"><span><%= t ".about" %></span></a></li>
                 <li><a data-hover="<%= t ".rooms" %>" href="#"><span><%= t ".rooms" %></span></a></li>
                 <li><a data-hover="<%= t ".contact_us" %>" href="#"><span><%= t ".contact_us" %></span></a></li>
                 <% if logged_in? %>
                   <li>
-                    <%= link_to current_user, data: {hover: t(".profile")} do %>
+                    <%= link_to current_user, data: {hover: t(".profile")},
+                      class: "#{'active' if current_page?(current_user)}" do %>
                       <span><%= t ".profile" %></span>
                     <% end %>
                   </li>
                   <li>
-                    <%= link_to edit_user_path(current_user), data: {hover: t(".setting")} do %>
+                    <%= link_to edit_user_path(current_user),
+                      data: {hover: t(".setting")},
+                      class: "#{'active' if current_page?(login_path)}" do %>
                       <span><%= t ".setting" %></span>
                     <% end %>
                   </li>
                   <li>
-                    <%= link_to logout_path, data: {hover: t(".log_out")}, method: :delete do %>
-                     <span><%= t ".log_out" %></span>
+                    <%= link_to logout_path, data: {hover: t(".log_out")},
+                      method: :delete do %>
+                      <span><%= t ".log_out" %></span>
                     <% end %>
                   </li>
                 <% else %>
                   <li>
-                    <%= link_to login_path, data: {hover: t(".log_in")} do %>
+                    <%= link_to login_path, data: {hover: t(".log_in")},
+                      class: "#{'active' if current_page?(login_path)}" do %>
                       <span><%= t ".log_in" %></span>
                     <% end %>
                   </li>
                   <li>
-                    <%= link_to signup_path, data: {hover: t(".sign_up")} do %>
+                    <%= link_to signup_path, data: {hover: t(".sign_up")},
+                      class: "#{'active' if current_page?(signup_path)}" do %>
                       <span><%= t ".sign_up" %></span>
                     <% end %>
                   </li>
@@ -79,7 +90,11 @@
           </nav>
         </div>
         <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
-          <div class="text-right"><button type="button" class="book-now-btn"><%= t ".book_now" %></button></div>
+          <div class="text-right">
+            <button type="button" class="book-now-btn">
+              <%= t ".book_now" %>
+            </button>
+          </div>
         </div>
       </div>
     </div>
