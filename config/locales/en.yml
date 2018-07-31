@@ -1,5 +1,8 @@
 en:
   hello: "Hello world"
+  time:
+    formats:
+      own: "%H:%M:%S, %d-%m-%Y"
   layouts:
     header:
       home: "Home"
@@ -14,6 +17,7 @@ en:
       sign_up: "Sign Up"
       book_now: "Book Now"
       web_name: "<span>Quat</span>lam"
+      manage_category: "Category"
     footer:
       get_in_touch: "Get in touch"
       address: "Quat Lam Town, Giao Thuy District, Nam Dinh"
@@ -135,6 +139,16 @@ en:
       invalid_activation_link: "Invalid activation link."
       account_activated: "Account activated !"
   categories:
+    category:
+      confirm: "You sure?"
+      delete: "Delete"
+      edit: "Edit"
+    index:
+      manage_category: "Category Management"
+      name_category: "Name"
+      price: "Price"
+      create_at: "Create At"
+      action: "Action"
     create:
       add_success: "Create category %{name} success."
       create_fail: "Create category fail! Please check imformation."
@@ -144,7 +158,20 @@ en:
       recommend: "<span>Our</span> Recommend"
       create_category_title: "<span>Create</span> Category"
       recommend: "<span>Our</span> Recommend"
+    update:
+      category_update: "Update category imformation success!"
+    destroy:
+      success: "Delete category success."
+      not_found: "Not found category."
+      confirm: "You sure?"
+    load_category:
+      not_found: "Not found category with id is %{id}."
     form:
       name: "Name"
       price: "Price"
       description: "Description"
+    edit:
+      edit_category: "Edit Category"
+      recommend: "<span>Our</span> Recommend"
+      edit_category_title: "<span>Edit</span> Category"
+      save_change: "Save changes"
