@@ -26,7 +26,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def vetify_admin
-    redirect_to root_path unless current_user&.admin?
+  def verify_staff
+    return if current_user&.staff? || current_user&.admin?
+    flash[:warning] = t "users.invalid_action"
+    redirect_to root_path
+  end
+
+  def verify_admin
+    return if current_user&.admin?
+    flash[:warning] = t "users.invalid_action"
+    redirect_to root_path
   end
 end

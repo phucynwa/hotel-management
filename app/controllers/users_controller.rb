@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   before_action :logged_in_user, except: %i(new create)
   before_action :not_logged_in, only: %i(new create)
   before_action :correct_user, only: %i(edit update)
+  before_action :verify_staff, only: :index
+
+  def index
+    @users = User.page(params[:page]).per Settings.users.per_page
+  end
 
   def show; end
 

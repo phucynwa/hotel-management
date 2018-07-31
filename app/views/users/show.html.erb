@@ -1,14 +1,63 @@
 <% provide :title, @user.name %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-      <%= @user.email %>
-      <br>
-      <%= @user.phone %>
-    </section>
-  </aside>
-</div>
+<section class="user-home-wrapper">
+  <div class="user-inner-wrapper">
+    <%= gravatar_for @user, size: Settings.gravatar_large_size %>
+    <div class="user-info">
+      <h1><%= @user.name %></h1>
+      <p>
+        <%= @user.email %><br><%= @user.phone %>
+      </p>
+    </div>
+  </div>
+</section>
+<% if current_user&.current_user?(@user) &&
+  (current_user&.staff? || current_user&.admin?) %>
+  <section class="service-block">
+    <div class="bg-set-col">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+            <a>
+              <div class="service-details text-center">
+                <div class="service-image">
+                  <%= image_tag "icons/rooms.png", alt: t(".rooms_management"), class: "img-responsive" %>
+                </div>
+                <h4><%= t ".rooms_management" %></h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+            <%= link_to users_path do %>
+              <div class="service-details text-center">
+                <div class="service-image">
+                  <%= image_tag "icons/users.png", alt: t(".users_management"), class: "img-responsive" %>
+                </div>
+                <h4><%= t ".users_management" %></h4>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+            <a>
+              <div class="service-details text-center">
+                <div class="service-image">
+                  <%= image_tag "icons/bills.png", alt: t(".bills_management"), class: "img-responsive" %>
+                </div>
+                <h4><%= t ".bills_management" %></h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+            <a>
+              <div class="service-details text-center">
+                <div class="service-image">
+                  <%= image_tag "icons/analysis.png", alt: t(".see_analysis"), class: "img-responsive" %>
+                </div>
+                <h4><%= t ".see_analysis" %></h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
