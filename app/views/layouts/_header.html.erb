@@ -51,6 +51,13 @@
                 <li><a data-hover="<%= t ".rooms" %>" href="#"><span><%= t ".rooms" %></span></a></li>
                 <li><a data-hover="<%= t ".contact_us" %>" href="#"><span><%= t ".contact_us" %></span></a></li>
                 <% if logged_in? %>
+                  <% if current_user.admin? %>
+                    <%= link_to categories_path, data: {hover: t(".manage_category")},
+                      class: "#{'active' if current_page?(categories_path)}" do %>
+                      <span><%= t ".manage_category" %></span>
+                    <% end %>
+                  </li>
+                  <% else %>
                   <li>
                     <%= link_to current_user, data: {hover: t(".profile")},
                       class: "#{'active' if current_page?(current_user)}" do %>
@@ -64,6 +71,7 @@
                       <span><%= t ".setting" %></span>
                     <% end %>
                   </li>
+                  <% end %>
                   <li>
                     <%= link_to logout_path, data: {hover: t(".log_out")},
                       method: :delete do %>

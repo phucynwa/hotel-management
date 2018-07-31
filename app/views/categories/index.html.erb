@@ -1,0 +1,17 @@
+<% provide :title, t(".manage_category") %>
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr class="success">
+        <th class="col-3"><%= t ".name_category" %></th>
+        <th class="col-4"><%= t ".price" %></th>
+        <th class="col-3"><%= t ".create_at" %></th>
+        <th class="col-3"><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody class="bg-white">
+      <%= render @categories %>
+    </tbody>
+  </table>
+  <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+</div>
