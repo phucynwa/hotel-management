@@ -5,3 +5,5 @@ validates:
 remember_me_checked: 1
 gravatar_size: 80
 expired_time: 2
+name_category_maximum: 50
+description_minimum: 10
