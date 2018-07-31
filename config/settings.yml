@@ -3,7 +3,12 @@ validates:
   name_maximum: 140
   password_minimum: 6
 remember_me_checked: 1
+users:
+  per_page: 10
 gravatar_size: 80
+gravatar_tiny_size: 40
+gravatar_large_size: 180
 expired_time: 2
 name_category_maximum: 50
 description_minimum: 10
+show: 10

@@ -1,5 +1,8 @@
 en:
   hello: "Hello world"
+  time:
+    formats:
+      own: "%H:%M:%S, %d-%m-%Y"
   layouts:
     header:
       home: "Home"
@@ -9,11 +12,12 @@ en:
       contact_us: "Contact Us"
       log_in: "Log In"
       log_out: "Log Out"
-      profile: "Profile"
+      dashboard: "Dashboard"
       setting: "Settings"
       sign_up: "Sign Up"
       book_now: "Book Now"
       web_name: "<span>Quat</span>lam"
+      manage_category: "Category"
     footer:
       get_in_touch: "Get in touch"
       address: "Quat Lam Town, Giao Thuy District, Nam Dinh"
@@ -56,6 +60,18 @@ en:
     user_not_exist: "User is not exist"
     invalid_action: "Invalid action."
     login_request: "Please login first !"
+    admin: "Admin"
+    staff: "Staff"
+    index:
+      all_users: "<span>All</span> Users"
+      users_management: "Users Management"
+    show:
+      user_not_exist: "User is not exist"
+      not_permission: "You have not permission !"
+      see_analysis: "see analysis"
+      bills_management: "manage bills"
+      room_management: "manage rooms"
+      users_management: "manage users"
     new:
       sign_up: "Sign Up"
       create: "Create my account"
@@ -135,6 +151,16 @@ en:
       invalid_activation_link: "Invalid activation link."
       account_activated: "Account activated !"
   categories:
+    category:
+      confirm: "You sure?"
+      delete: "Delete"
+      edit: "Edit"
+    index:
+      manage_category: "Category Management"
+      name_category: "Name"
+      price: "Price"
+      create_at: "Create At"
+      action: "Action"
     create:
       add_success: "Create category %{name} success."
       create_fail: "Create category fail! Please check imformation."
@@ -144,7 +170,20 @@ en:
       recommend: "<span>Our</span> Recommend"
       create_category_title: "<span>Create</span> Category"
       recommend: "<span>Our</span> Recommend"
+    update:
+      category_update: "Update category imformation success!"
+    destroy:
+      success: "Delete category success."
+      not_found: "Not found category."
+      confirm: "You sure?"
+    load_category:
+      not_found: "Not found category with id is %{id}."
     form:
       name: "Name"
       price: "Price"
       description: "Description"
+    edit:
+      edit_category: "Edit Category"
+      recommend: "<span>Our</span> Recommend"
+      edit_category_title: "<span>Edit</span> Category"
+      save_change: "Save changes"

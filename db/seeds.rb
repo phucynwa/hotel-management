@@ -11,7 +11,8 @@ User.create! name: "Staff", email: "staff@gmail.com", phone: "0243 256 2548",
     email: Faker::Internet.unique.email,
     phone: Faker::PhoneNumber.phone_number,
     password: "123123",
-    password_confirmation: "123123", activated: true,
+    password_confirmation: "123123",
+    activated: true,
     activated_at: Time.zone.now,
     role: 0
 end

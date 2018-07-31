@@ -1,23 +1,25 @@
 <% provide :title, t(".log_in") %>
-<div class="col-md-6 contact-left-block">
-  <h3><%= raw t(".recommend") %></h3>
-  <p><%= t ".new_user" %> <%= link_to t(".sign_up"), signup_path, class: "link" %></p>
-</div>
-<div class="col-md-6 contact-form">
-  <h3><%= raw (t ".log_in_title") %></h3>
-  <%= form_for :session, url: login_path do |f| %>
+<div class="container">
+  <div class="col-md-6 contact-left-block">
+    <h3><%= raw t(".recommend") %></h3>
+    <p><%= t ".new_user" %> <%= link_to t(".sign_up"), signup_path, class: "link" %></p>
+  </div>
+  <div class="col-md-6 contact-form">
+    <h3><%= raw (t ".log_in_title") %></h3>
+    <%= form_for :session, url: login_path do |f| %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email, class: "form-control" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
 
-    <%= f.label :password %>
-    <%= link_to t(".forgot_password"), new_password_reset_path, class: "link" %>
-    <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :password %>
+      <%= link_to t(".forgot_password"), new_password_reset_path, class: "link" %>
+      <%= f.password_field :password, class: "form-control" %>
 
-    <%= f.label :remember_me, class: "checkbox inline" do %>
-      <%= f.check_box :remember_me %>
-      <span><%= t ".remember" %></span>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span><%= t ".remember" %></span>
+      <% end %>
+      <%= f.submit t(".log_in"), class: "submit-btn" %>
     <% end %>
-    <%= f.submit t(".log_in"), class: "submit-btn" %>
-  <% end %>
+  </div>
 </div>

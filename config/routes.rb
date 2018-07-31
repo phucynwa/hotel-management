@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
   post "signup", to: "users#create"
   resources :password_resets, except: %i(index show destroy)
-  resources :users, except: %i(index destroy)
+  resources :users, except: :destroy
   resources :account_activations, only: :edit
-  resources :categories, only: %i(new create)
+  resources :categories
 end

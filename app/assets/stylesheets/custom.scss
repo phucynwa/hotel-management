@@ -79,3 +79,29 @@ input, textarea, select, .uneditable-input {
 .alert {
   border-radius: 0;
 }
+
+.user-home-wrapper {
+  @extend .image-head-wrapper;
+  background: image-url('banner.jpg');
+}
+
+.user-inner-wrapper {
+  color: white;
+  left: 20%;
+  position: relative;
+  text-transform: uppercase;
+  top: 50%;
+  #transform: translate(-70%, -70%);
+  width: 60%;
+  img {
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .user-info {
+    padding-top: 50px;
+    position: relative;
+    line-height: 1.75;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
