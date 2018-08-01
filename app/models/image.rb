@@ -1,5 +1,4 @@
 class Image < ApplicationRecord
   belongs_to :room
-
-  validates :image_link, presence: true
+  scope :by_latest, ->{order created_at: :desc}
 end

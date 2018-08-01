@@ -17,6 +17,26 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+            <%= link_to users_path do %>
+              <div class="service-details text-center">
+                <div class="service-image">
+                  <%= image_tag "icons/users.png", alt: t(".users_management"), class: "img-responsive" %>
+                </div>
+                <h4><%= t ".users_management" %></h4>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+            <%= link_to categories_path do %>
+              <div class="service-details text-center">
+                <div class="service-image">
+                  <%= image_tag "icons/categories.png", alt: t(".categories_management"), class: "img-responsive" %>
+                </div>
+                <h4><%= t ".categories_management" %></h4>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6 width-50">
             <a>
               <div class="service-details text-center">
                 <div class="service-image">
@@ -27,15 +47,17 @@
             </a>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6 width-50">
-            <%= link_to users_path do %>
+            <%= link_to images_path do %>
               <div class="service-details text-center">
                 <div class="service-image">
-                  <%= image_tag "icons/users.png", alt: t(".users_management"), class: "img-responsive" %>
+                  <%= image_tag "icons/images.png", alt: t(".images_management"), class: "img-responsive" %>
                 </div>
-                <h4><%= t ".users_management" %></h4>
+                <h4><%= t ".images_management" %></h4>
               </div>
             <% end %>
           </div>
+        </div>
+        <div class="row">
           <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
             <a>
               <div class="service-details text-center">

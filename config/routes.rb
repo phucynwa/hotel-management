@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, except: :destroy
   resources :account_activations, only: :edit
   resources :categories
+  resources :images, only: %i(index destroy)
 end
