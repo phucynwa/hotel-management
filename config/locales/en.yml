@@ -70,7 +70,9 @@ en:
       not_permission: "You have not permission !"
       see_analysis: "see analysis"
       bills_management: "manage bills"
-      room_management: "manage rooms"
+      rooms_management: "manage rooms"
+      categories_management: "manage categories"
+      images_management: "manage images"
       users_management: "manage users"
     new:
       sign_up: "Sign Up"
@@ -86,7 +88,8 @@ en:
       password: "Your Password"
       confirm_password: "Confirm Your Password"
     create:
-      sign_up_successful: "Sign up successful, You can log in !"
+      sign_up_successful: "Sign up successful ! Please check your email to activate your account."
+      sign_up_fail: "Sign up unsuccessful. Please read our warnings."
     edit:
       edit: "Change user profile"
       recommend: "<span>Our</span> Recommend"
@@ -96,9 +99,7 @@ en:
       change_avatar: "http://gravatar.com/emails"
       pleaselogin: "Please log in"
     update:
-      profile_update: "Profile updated"
-      sign_up_successful: "Sign up successful ! Please check your email to activate your account."
-      sign_up_fail: "Sign up unsuccessful. Please read our warnings."
+      profile_updated: "Profile updated"
   shared:
     error_messages:
       form_error_warning:
@@ -158,6 +159,7 @@ en:
     index:
       manage_category: "Category Management"
       name_category: "Name"
+      all_categories: "<span>All</span> Categories"
       price: "Price"
       create_at: "Create At"
       action: "Action"
@@ -187,3 +189,19 @@ en:
       recommend: "<span>Our</span> Recommend"
       edit_category_title: "<span>Edit</span> Category"
       save_change: "Save changes"
+  images:
+    image:
+      confirm: "You sure?"
+      delete: "Delete"
+      edit: "Edit"
+    index:
+      manage_image: "Image Management"
+      all_images: "<span>All</span> Images"
+      id: "ID"
+      room_id: "Room id"
+      image: "Image"
+      create_at: "Created At"
+      action: "Action"
+    destroy:
+      success: "Delete image success."
+      not_found: "Not found image."

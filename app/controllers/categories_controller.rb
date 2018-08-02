@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
-  before_action :logged_in_user, :verify_admin
+  before_action :logged_in_user
   before_action :load_category, except: %i(index new create)
+  before_action :verify_staff, only: :index
+  before_action :verify_admin, except: :index
 
   def index
     @categories = Category.by_latest.page(params[:page]).per Settings.show

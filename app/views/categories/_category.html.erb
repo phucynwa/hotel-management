@@ -1,13 +1,15 @@
 <tr>
-  <td class="col-3"><%= category.name %></td>
-  <td class="col-4"><%= category.price %></td>
-  <td class="col-3"><%= l category.created_at, format: :own %></td>
-  <td class="col-3">
-    <span class="glyphicon glyphicon-trash">
-      <%= link_to t(".delete"), category, method: :delete, data: {confirm: t(".confirm")} %>
-    </span> |
-    <span class="glyphicon glyphicon-cog">
-      <%= link_to t(".edit"), edit_category_path(category) %>
-    </span>
-  </td>
+  <td><%= category.name %></td>
+  <td><%= category.price %></td>
+  <td><%= l category.created_at, format: :own %></td>
+  <% if current_user&.admin? %>
+    <td>
+      <span class="glyphicon glyphicon-trash">
+        <%= link_to t(".delete"), category, method: :delete, data: {confirm: t(".confirm")} %>
+      </span> |
+      <span class="glyphicon glyphicon-cog">
+        <%= link_to t(".edit"), edit_category_path(category) %>
+      </span>
+    </td>
+  <% end %>
 </tr>
