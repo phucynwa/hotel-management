@@ -1,0 +1,10 @@
+<tr>
+  <td><%= image.id %></td>
+  <td><%= image.room.label %></td>
+  <td><%= image_tag image.image_link, :size => "80x60" %></td>
+  <td><%= l image.created_at, format: :own %></td>
+  <td class="action-btn">
+    <%= link_to t(".delete"), admin_image_path(image),
+      method: :delete, data: {confirm: t(".confirm")}, class: "submit-btn" %>
+  </td>
+</tr>

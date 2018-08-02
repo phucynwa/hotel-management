@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
   post "signup", to: "users#create"
   resources :password_resets, except: %i(index show destroy)
-  resources :users, except: :destroy
+  resources :users, except: %i(index destroy)
   resources :account_activations, only: :edit
-  resources :categories
-  resources :images, only: %i(index destroy)
+  resources :images, only: :index
+  resources :categories, only: :show
+  namespace :admin do
+    resources :users, only: %i(index update destroy)
+    resources :categories, except: :show
+    resources :images, only: %i(index destroy)
+  end
 end

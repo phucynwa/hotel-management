@@ -17,7 +17,6 @@ en:
       sign_up: "Sign Up"
       book_now: "Book Now"
       web_name: "<span>Quat</span>lam"
-      manage_category: "Category"
     footer:
       get_in_touch: "Get in touch"
       address: "Quat Lam Town, Giao Thuy District, Nam Dinh"
@@ -46,6 +45,7 @@ en:
       invalid: "Invalid email/password combination"
       invalid_action: "Invalid action !"
       check_email_request: "Your email hasn't verified. Please active your email first."
+      locked_account: "Your account has been locked !"
     new:
       recommend: "<span>Our</span> Recommend"
       log_in: "Log In"
@@ -62,9 +62,6 @@ en:
     login_request: "Please login first !"
     admin: "Admin"
     staff: "Staff"
-    index:
-      all_users: "<span>All</span> Users"
-      users_management: "Users Management"
     show:
       user_not_exist: "User is not exist"
       not_permission: "You have not permission !"
@@ -100,12 +97,30 @@ en:
       pleaselogin: "Please log in"
     update:
       profile_updated: "Profile updated"
+      sign_up_successful: "Sign up successful ! Please check your email to activate your account."
+      sign_up_fail: "Sign up unsuccessful. Please read our warnings."
+    user:
+      you_sure: "Are you sure ?"
+      lock: "Lock"
+      unlock: "Unlock"
+      set_staff: "Set Staff"
+      unset_staff: "Unset Staff"
   shared:
     error_messages:
       form_error_warning:
         zero: "none"
         one: "The form contains 1 error"
         other: "The form contains %{count} errors"
+    admin_board:
+      see_analysis: "see analysis"
+      bills_management: "bills"
+      rooms_management: "rooms"
+      users_management: "users"
+      cates_management: "categories"
+      images_management: "images"
+    user_board:
+      profile: "my profile"
+      edit_profile: "edit my profile"
   password_resets:
     create:
       email_not_found: "Email address not found"
@@ -151,6 +166,15 @@ en:
     edit:
       invalid_activation_link: "Invalid activation link."
       account_activated: "Account activated !"
+  images:
+    index:
+      manage_image: "Image Management"
+      all_images: "<span>All</span> Images"
+      id: "ID"
+      room_label: "Room label"
+      image: "Image"
+      create_at: "Created At"
+      action: "Action"
   categories:
     category:
       confirm: "You sure?"
@@ -189,19 +213,73 @@ en:
       recommend: "<span>Our</span> Recommend"
       edit_category_title: "<span>Edit</span> Category"
       save_change: "Save changes"
-  images:
-    image:
-      confirm: "You sure?"
-      delete: "Delete"
-      edit: "Edit"
-    index:
-      manage_image: "Image Management"
-      all_images: "<span>All</span> Images"
-      id: "ID"
-      room_id: "Room id"
-      image: "Image"
-      create_at: "Created At"
-      action: "Action"
-    destroy:
-      success: "Delete image success."
-      not_found: "Not found image."
+  admin:
+    users:
+      index:
+        users_management: "Users Management"
+        all_users: "<span>All</span> Users"
+      user:
+        you_sure: "Are you sure ?"
+        lock: "Lock"
+        unlock: "Unlock"
+        set_staff: "Set Staff"
+        unset_staff: "Unset Staff"
+      update:
+        locked: "You has locked %{name} !"
+        staff: "%{name} has become a staff."
+        customer: "%{name} has become a normal user."
+        save_admin: "You cannot change admin account's role."
+        cannot_set_admin: "You cannot set admin any account."
+    categories:
+      index:
+        manage_category: "Category Management"
+        all_categories: "<span>All</span> Categories"
+        name_category: "Name"
+        price: "Price"
+        create_at: "Create At"
+        action: "Action"
+        rooms_state: "Rooms State (Free | Booked | ...)"
+      category:
+        confirm: "You sure?"
+      destroy:
+        success: "Delete category success."
+        not_found: "Not found category."
+      edit:
+        edit_category: "Edit Category"
+        save_change: "Save changes"
+        recommend: "<span>Our</span> Recommend"
+        edit_category_title: "<span>Edit</span> Category"
+      update:
+        category_update: "Update category information success!"
+      new:
+        create_category: "Create category"
+        create: "Create new category"
+        recommend: "<span>Our</span> Recommend"
+        create_category_title: "<span>Create</span> Category"
+        come_back: "Click this link to come back: "
+        all_categories: "All categories"
+      form:
+        name: "Name"
+        price: "Price"
+        description: "Description"
+      create:
+        add_success: "Create category %{name} success."
+        create_fail: "Create category fail! Please check imformation."
+    images:
+      image:
+        confirm: "You sure?"
+        delete: "Delete"
+        edit: "Edit"
+      index:
+        manage_image: "Image Management"
+        all_images: "<span>All</span> Images"
+        id: "ID"
+        room_id: "Room id"
+        image: "Image"
+        create_at: "Created At"
+        action: "Action"
+      destroy:
+        success: "Delete image success."
+        not_found: "Not found image."
+      load_category:
+        not_found: "Not found category with id is %{id}."

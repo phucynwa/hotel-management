@@ -1,0 +1,12 @@
+<section class="service-block">
+  <div class="bg-set-col">
+    <div class="container">
+      <div class="row">
+        <%= render "shared/function", link: user_path(current_user),
+          name: t(".profile"), icon: "icons/profile.png" %>
+        <%= render "shared/function", link: edit_user_path(current_user),
+          name: t(".edit_profile"), icon: "icons/edit_profile.png" %>
+      </div>
+    </div>
+  </div>
+</section>
