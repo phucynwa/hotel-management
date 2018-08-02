@@ -1,0 +1,18 @@
+<%= form_for [:admin, @room], html: {multipart: true} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {},
+      class: "form-control" %>
+
+    <%= f.text_field :label, class: "form-control", placeholder: t(".label") %>
+
+    <%= f.number_field :floor, class: "form-control", placeholder: t(".floor") %>
+
+    <%= f.number_field :status, class: "form-control", placeholder: t(".status") %>
+
+    <%= f.fields_for :images do |p| %>
+      <%= f.file_field :image, multiple: true, name: "images[image_link][]",
+      class: "upload-image" %>
+    <% end %>
+
+    <%= f.submit yield(:button_text), class: "submit-btn" %>
+<% end %>
