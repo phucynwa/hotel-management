@@ -16,14 +16,17 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
 # Ignore uploaded files in development
 /storage/*
 
+/test/*
+/public/uploads/*
 /node_modules
+
 /yarn-error.log
 
 /public/assets
+
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
@@ -31,7 +34,6 @@
 
 /config/database.yml
 /config/credentials.yml.enc
-/test
 app/assets/images/*
 
 config/settings.local.yml

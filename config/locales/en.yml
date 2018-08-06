@@ -175,44 +175,6 @@ en:
       image: "Image"
       create_at: "Created At"
       action: "Action"
-  categories:
-    category:
-      confirm: "You sure?"
-      delete: "Delete"
-      edit: "Edit"
-    index:
-      manage_category: "Category Management"
-      name_category: "Name"
-      all_categories: "<span>All</span> Categories"
-      price: "Price"
-      create_at: "Create At"
-      action: "Action"
-    create:
-      add_success: "Create category %{name} success."
-      create_fail: "Create category fail! Please check imformation."
-    new:
-      create_category: "Create category"
-      create: "Create new category"
-      recommend: "<span>Our</span> Recommend"
-      create_category_title: "<span>Create</span> Category"
-      recommend: "<span>Our</span> Recommend"
-    update:
-      category_update: "Update category imformation success!"
-    destroy:
-      success: "Delete category success."
-      not_found: "Not found category."
-      confirm: "You sure?"
-    load_category:
-      not_found: "Not found category with id is %{id}."
-    form:
-      name: "Name"
-      price: "Price"
-      description: "Description"
-    edit:
-      edit_category: "Edit Category"
-      recommend: "<span>Our</span> Recommend"
-      edit_category_title: "<span>Edit</span> Category"
-      save_change: "Save changes"
   admin:
     users:
       index:
@@ -231,6 +193,7 @@ en:
         save_admin: "You cannot change admin account's role."
         cannot_set_admin: "You cannot set admin any account."
     categories:
+      warning: "Category has many rooms !"
       index:
         manage_category: "Category Management"
         all_categories: "<span>All</span> Categories"
@@ -265,6 +228,8 @@ en:
       create:
         add_success: "Create category %{name} success."
         create_fail: "Create category fail! Please check imformation."
+      load_category:
+        not_found: "Not found category with id is %{id}."
     images:
       image:
         confirm: "You sure?"
@@ -278,8 +243,27 @@ en:
         image: "Image"
         create_at: "Created At"
         action: "Action"
+      update:
+        success: "Update image information success!"
       destroy:
         success: "Delete image success."
         not_found: "Not found image."
-      load_category:
-        not_found: "Not found category with id is %{id}."
+      load_image:
+        not_found: "Not found image with id is %{id}."
+    rooms:
+      edit:
+        edit_room: "Edit Room"
+        save_change: "Save changes"
+        recommend: "<span>Our</span> Recommend"
+        edit_room_title: "<span>Edit</span> Room"
+      form:
+        label: "Label"
+        floor: "Floor"
+        status: "Status"
+      update:
+        success: "Room was successfully updated."
+      load_room:
+        not_found: "Not found room with id is %{id}."
+      destroy:
+        success: "Delete image success."
+        not_found: "Not found image."

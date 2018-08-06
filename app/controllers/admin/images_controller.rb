@@ -8,12 +8,11 @@ class Admin::ImagesController < ApplicationController
 
   def destroy
     if @image.destroy
-      flash[:success] = t "images.success"
-      redirect_to images_path
+      flash[:success] = t ".success"
     else
-      flash[:danger] = t "images.not_found"
-      redirect_to images_path
+      flash[:danger] = t ".not_found"
     end
+    redirect_to admin_images_path
   end
 
   private
@@ -21,7 +20,7 @@ class Admin::ImagesController < ApplicationController
   def load_image
     @image = Image.find_by id: params[:id]
     return if @image
-    flash[:danger] = t "images.not_found", id: params[:id]
-    redirect_to images_path
+    flash[:danger] = t ".not_found", id: params[:id]
+    redirect_to admin_images_path
   end
 end
