@@ -8,12 +8,11 @@ Rails.application.routes.draw do
   resources :password_resets, except: %i(index show destroy)
   resources :users, except: %i(index destroy)
   resources :account_activations, only: :edit
-  resources :images, only: :index
   resources :categories, only: :show
   namespace :admin do
     resources :users, only: %i(index update destroy)
     resources :categories, except: :show
     resources :images, only: %i(index destroy)
-    resources :rooms, only: %i(edit update destroy)
+    resources :rooms, except: %i(new create)
   end
 end

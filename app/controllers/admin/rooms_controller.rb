@@ -1,7 +1,6 @@
 class Admin::RoomsController < ApplicationController
   before_action :load_room, only: %i(edit update destroy)
   before_action :logged_in_user, :verify_staff
-  before_action :room_params, only: :update
 
   def index; end
 
@@ -9,7 +8,6 @@ class Admin::RoomsController < ApplicationController
 
   def update
     if @room.update_attributes room_params
-      insert_room
       flash[:success] = t ".success"
       redirect_to edit_admin_room_path
     else
@@ -33,17 +31,6 @@ class Admin::RoomsController < ApplicationController
     return if @room
     flash[:danger] = t ".not_found", id: params[:id]
     redirect_to admin_rooms_path
-  end
-
-  def insert_room
-    ActiveRecord::Base.transaction do
-      @room.save
-      params[:images]["image_link"].each do |image|
-        @image = Image.create room_id: @room.id, image_link: image
-        @image.save
-      end
-    end
-    return unless @room.persisted?
   end
 
   def room_params
