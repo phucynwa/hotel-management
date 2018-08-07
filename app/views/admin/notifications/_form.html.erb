@@ -1,0 +1,15 @@
+<%= form_for [:admin, @notification] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+    <%= f.label :staff_id %>
+    <%= f.text_field :staff_id, class: "form-control", value: current_user.id,
+      disabled: true %>
+
+    <%= f.label :customer_id %>
+    <%= f.collection_select :customer_id, User.by_role(:customer), :id, :name,
+      {}, class: "form-control" %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control", placeholder: t(".content") %>
+
+    <%= f.submit yield(:button_text), class: "submit-btn" %>
+<% end %>

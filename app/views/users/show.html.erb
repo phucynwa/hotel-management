@@ -1,5 +1,5 @@
 <% provide :title, @user.name %>
-<section class="user-home-wrapper">
+<section class="section user-home-wrapper">
   <div class="user-inner-wrapper">
     <%= gravatar_for @user, size: Settings.gravatar_large_size %>
     <div class="user-info">
@@ -10,3 +10,8 @@
     </div>
   </div>
 </section>
+<% unless is_admin? || is_staff? %>
+  <section class="section">
+    <%= render "notifications" %>
+  </section>
+<% end %>

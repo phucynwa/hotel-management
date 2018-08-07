@@ -1,0 +1,11 @@
+<% provide :title, t(".edit_notification") %>
+<% provide :button_text, t(".save_change") %>
+<div class="container">
+  <div class="col-md-6 contact-left-block">
+    <h3><%= raw t(".recommend") %></h3>
+  </div>
+  <div class="col-md-6 contact-form">
+    <h3><%= raw t(".edit_notification_title") %></h3>
+    <%= render "form" %>
+  </div>
+</div>

@@ -20,7 +20,7 @@
       </aside>
       <div class="col-md-8">
         <% @room.images.each do |image| %>
-          <%= image_tag image.image_link.url, size: Settings.room_image_mini_size %><br>
+          <%= image_tag image.image_link, size: Settings.room_image_mini_size %><br>
         <% end %>
       </div>
     </div>
