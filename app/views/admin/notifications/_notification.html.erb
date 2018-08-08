@@ -1,0 +1,14 @@
+<tr class="user-row">
+  <td><%= notification.id %></a></td>
+  <td><%= notification.customer_id %></td>
+  <td><%= notification.content %></td>
+  <td><%= l notification.created_at, format: :own %></td>
+  <% if is_staff? %>
+    <td class="action-btn">
+      <%= link_to t(".delete"), admin_notification_path(notification), method: :delete,
+        data: {confirm: t(".confirm")}, class: "submit-btn" %>
+      <%= link_to t(".edit"), edit_admin_notification_path(notification),
+        class: "submit-btn" %>
+    </td>
+  <% end %>
+</tr>

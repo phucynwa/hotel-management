@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i(edit update)
   before_action :verify_staff, only: :index
   before_action :hide_other_customers, only: :show
+  before_action :load_notifitions, only: :show
 
   def show; end
 
@@ -41,6 +42,12 @@ class UsersController < ApplicationController
     return if current_user.current_user? @user
     flash[:warning] = t "users.invalid_action"
     redirect_to root_path
+  end
+
+  def load_notifitions
+    @notifications = User.select("notifications.content, notifications.created_at")
+      .joins("INNER JOIN notifications ON users.id = notifications.customer_id ")
+      .where id: current_user.id
   end
 
   def hide_other_customers

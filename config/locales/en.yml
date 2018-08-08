@@ -3,6 +3,7 @@ en:
   time:
     formats:
       own: "%H:%M:%S, %d-%m-%Y"
+      short: "%d-%m-%Y"
   layouts:
     header:
       home: "Home"
@@ -112,6 +113,7 @@ en:
       users_management: "users"
       cates_management: "categories"
       images_management: "images"
+      notifications_management: "notifications"
     user_board:
       profile: "my profile"
       edit_profile: "edit my profile"
@@ -326,3 +328,39 @@ en:
       destroy:
         success: "Delete image success."
         not_found: "Not found image."
+    notifications:
+      index:
+        manage_notification: "Notification Management"
+        all_notifications: "<span>All</span> Notifications"
+        id_notification: "ID"
+        customer_id: "Customer"
+        staff_id: "Staff"
+        content_notification: "Content"
+        create_at: "Create At"
+        action: "Action"
+      notification:
+        confirm: "You sure?"
+      destroy:
+        success: "Delete notification success."
+        not_found: "Not found notification."
+      edit:
+        edit_notification: "Edit Notification"
+        save_change: "Save changes"
+        recommend: "<span>Our</span> Recommend"
+        edit_notification_title: "<span>Edit</span> Notification"
+      update:
+        notification_update: "Update notification information success!"
+      new:
+        send_notification: "Send notification"
+        create: "Send new notification"
+        recommend: "<span>Our</span> Recommend"
+        send_notification_title: "<span>Send</span> Notification"
+        come_back: "Click this link to come back: "
+        all_notifications: "All Notifications"
+      form:
+        content: "Messsage"
+      create:
+        send_success: "Send notification success."
+        send_fail: "Send notification fail! Please check imformation."
+      load_notification:
+        not_found: "Not found notification"

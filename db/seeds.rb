@@ -32,13 +32,6 @@ end
     status: status, category_id: category_id
 end
 
-40.times do
-  room_id = Random.rand(40) + 1
-  image_link = Faker::Avatar.image(slug = nil, size = '730x411',
-    format = 'png', bgset = true)
-  Image.create! image_link: image_link, room_id: room_id
-end
-
 50.times do
   user_id = Random.rand(50) + 1
   start_time = Time.zone.now.days_ago(3)
@@ -61,4 +54,11 @@ end
   user_id = Random.rand(50) + 1
   content = Faker::Lorem.sentence
   Rating.create! user_id: user_id, content: content
+end
+
+40.times do
+  room_id = Random.rand(40) + 1
+  image_link = Faker::Avatar.image(slug = nil, size = '730x411',
+    format = 'png', bgset = true)
+  Image.create! image_link: image_link, room_id: room_id
 end

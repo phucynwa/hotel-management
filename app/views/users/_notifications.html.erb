@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="col-md-9 contact-form">
+    <h3><%= t ".notifications" %></h3>
+      <table class="table">
+      <% @notifications.each do |notification| %>
+        <tr class="user-row">
+          <td><%= l notification.created_at, format: :short %></td>
+          <td><%= notification.content %></td>
+        </tr>
+      <% end %>
+      </table>
+  </div>
+  <div class="col-md-3 contact-left-block">
+  </div>
+</div>
