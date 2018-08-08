@@ -8,4 +8,7 @@ class Room < ApplicationRecord
 
   validates :label, :floor, :status, presence: true
   validates :floor, numericality: {greater_than: Settings.zero}
+
+  scope :by_category_id, ->(category_id){where category_id: category_id}
+  scope :by_floor, ->(floor){where floor: floor}
 end

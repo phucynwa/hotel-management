@@ -16,5 +16,6 @@ show: 10
 show_rooms: 10
 default_image: "https://grandcasinomn.com/files/1615/2208/9595/HK_HotelRoom_Web_200x200.jpg"
 room_image_mini_size: "80x80"
+room_image_medium_size: "120x120"
 room_image_normal_size: "280x280"
 zero: 0

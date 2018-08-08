@@ -28,4 +28,12 @@ module ApplicationHelper
       Settings.default_image
     end
   end
+
+  def all_category
+    Category.all
+  end
+
+  def max_floor
+    Room.maximum :floor
+  end
 end

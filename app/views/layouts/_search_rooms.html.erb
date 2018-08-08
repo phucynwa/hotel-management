@@ -1,0 +1,22 @@
+<%= form_tag rooms_path, remote: true, method: :get, id: "search-rooms" do %>
+  <div class="row">
+    <div class="col-md-6">
+      <label><%= t ".category" %>:</label>
+      <select id="select-category" name="category_id">
+        <%= all_category.each do |category| %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label><%= t ".floor" %>:</label>
+      <select id="select-floor" name="floor">
+        <% max_floor.times do |i| %>
+          <option value="<%= i + 1 %>"><%= t ".floor" %> <%= i + 1 %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+<% end %>
+<hr>
+<div id="search-rooms-result"></div>

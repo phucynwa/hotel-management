@@ -1,2 +1,5 @@
 <% provide title: t(".home") %>
+<div class="container">
+  <%= render "layouts/search_rooms" %>
+</div>
 <%= render "shared/user_board" if logged_in? %>

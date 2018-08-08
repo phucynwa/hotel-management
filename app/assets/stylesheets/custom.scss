@@ -157,6 +157,18 @@ form.edit_user {
   }
 }
 
-.section{
+.section {
   margin-bottom: 30px;
+}
+
+.media {
+  border: 1px solid $light-gray;
+  .media-body {
+    padding-top: 10px;
+  }
+}
+
+.search-input {
+  margin-top: 15px;
+  height: 35px;
 }
