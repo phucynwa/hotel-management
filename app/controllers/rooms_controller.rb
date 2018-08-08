@@ -2,7 +2,12 @@ class RoomsController < ApplicationController
   before_action :load_room, only: :show
 
   def index
-    @rooms = Room.page(params[:page]).per Settings.show_rooms
+    @rooms = Room.by_category_id(params[:category_id]).by_floor(params[:floor])
+      .page(params[:page]).per Settings.show_rooms
+    respond_to do |format|
+      format.html {render :index}
+      format.js {}
+    end
   end
 
   def show; end

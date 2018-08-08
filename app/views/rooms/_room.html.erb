@@ -1,11 +1,12 @@
 <div class="media">
   <div class="media-left">
-    <%= image_tag first_image_link(room), class: "media-object", size: Settings.room_image_mini_size %>
+    <%= image_tag first_image_link(room), class: "media-object", size: Settings.room_image_medium_size %>
   </div>
   <div class="media-body">
     <h4 class="media-heading"><%= link_to room.label, room %></h4>
     <ul>
       <li><%= room.category.name %></li>
+      <li><%= room.category.price %></li>
       <li><%= room.floor %></li>
     </ul>
   </div>

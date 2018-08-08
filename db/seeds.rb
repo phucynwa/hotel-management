@@ -26,7 +26,7 @@ end
 40.times do
   label = Faker::Lorem.characters(5)
   floor = Random.rand(15) + 1
-  status = Random.rand(5) + 1
+  status = Random.rand 3
   category_id = Random.rand(10) + 1
   Room.create! label: label, floor: floor,
     status: status, category_id: category_id
@@ -36,7 +36,7 @@ end
   user_id = Random.rand(50) + 1
   start_time = Time.zone.now.days_ago(3)
   end_time = Time.zone.now
-  status = Random.rand(5) + 1
+  status = Random.rand 2
   Booking.create! user_id: user_id, start_time: start_time, end_time: end_time,
     status: status
 end

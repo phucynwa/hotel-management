@@ -37,6 +37,9 @@ en:
       explore: "Explore"
     application:
       base_title: "Hotel Management"
+    search_rooms:
+      category: "Category"
+      floor: "Floor"
   static_pages:
     home:
       home: "Home"

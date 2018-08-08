@@ -2,9 +2,7 @@
 <section class="resort-overview-block">
   <div class="container">
     <div class="row">
-      <% @rooms.each_with_index do |room, index| %>
-        <%= render room, index: index%4 %>
-      <% end %>
+      <%= render @rooms %>
       <div class="clearfix"></div>
     </div>
     <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
