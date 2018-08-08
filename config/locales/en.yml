@@ -65,12 +65,6 @@ en:
     show:
       user_not_exist: "User is not exist"
       not_permission: "You have not permission !"
-      see_analysis: "see analysis"
-      bills_management: "manage bills"
-      rooms_management: "manage rooms"
-      categories_management: "manage categories"
-      images_management: "manage images"
-      users_management: "manage users"
     new:
       sign_up: "Sign Up"
       create: "Create my account"
@@ -112,7 +106,7 @@ en:
         one: "The form contains 1 error"
         other: "The form contains %{count} errors"
     admin_board:
-      see_analysis: "see analysis"
+      see_analysis: "analysis"
       bills_management: "bills"
       rooms_management: "rooms"
       users_management: "users"
@@ -175,6 +169,54 @@ en:
       image: "Image"
       create_at: "Created At"
       action: "Action"
+  categories:
+    category:
+      confirm: "You sure?"
+      delete: "Delete"
+      edit: "Edit"
+    index:
+      manage_category: "Category Management"
+      name_category: "Name"
+      all_categories: "<span>All</span> Categories"
+      price: "Price"
+      create_at: "Create At"
+      action: "Action"
+    create:
+      add_success: "Create category %{name} success."
+      create_fail: "Create category fail! Please check imformation."
+    new:
+      create_category: "Create category"
+      create: "Create new category"
+      recommend: "<span>Our</span> Recommend"
+      create_category_title: "<span>Create</span> Category"
+      recommend: "<span>Our</span> Recommend"
+    update:
+      category_update: "Update category imformation success!"
+    destroy:
+      success: "Delete category success."
+      not_found: "Not found category."
+      confirm: "You sure?"
+    load_category:
+      not_found: "Not found category with id is %{id}."
+    form:
+      name: "Name"
+      price: "Price"
+      description: "Description"
+    edit:
+      edit_category: "Edit Category"
+      recommend: "<span>Our</span> Recommend"
+      edit_category_title: "<span>Edit</span> Category"
+      save_change: "Save changes"
+    load_category:
+      not_found: "Not found category with id is %{id}."
+  rooms:
+    show:
+      room_not_exist: "Room not exist !"
+      floor: "Floor %{floor}"
+    index:
+      rooms: "All rooms"
+    room_text:
+      book_now: "Book Now"
   admin:
     users:
       index:
@@ -251,6 +293,23 @@ en:
       load_image:
         not_found: "Not found image with id is %{id}."
     rooms:
+      index:
+        rooms_management: "Room Management"
+        id: "ID"
+        image: "Image"
+        label: "Label"
+        status: "Status"
+        floor: "Floor"
+        new_room: "New room"
+      create:
+        create_room_successful: "Create room successful !"
+        create_room_fail: "Create room fail !"
+      new:
+        new_room: "Create new room"
+        recommend: "<span>Our</span> Recommend"
+        new_room_title: "<span>New</span> Room"
+      form:
+        status: "Status"
       edit:
         edit_room: "Edit Room"
         save_change: "Save changes"
