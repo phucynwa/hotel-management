@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   before_action :hide_other_customers, only: :show
   before_action :load_notifitions, only: :show
 
-  def show; end
+  def show
+    @ratings = @user.ratings
+  end
 
   def new
     @user = User.new

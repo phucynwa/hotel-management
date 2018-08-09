@@ -29,7 +29,7 @@
         <div class="col-sm-6 visible-sm">
           <div class="text-right"><button type="button" class="book-now-btn"><%= t ".book_now" %></button></div>
         </div>
-        <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
+        <div class="col-md-6 col-sm-12 col-xs-12 remove-padd">
           <nav class="navbar navbar-default">
             <div class="navbar-header page-scroll">
               <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
@@ -54,7 +54,6 @@
                     <span><%= t ".rooms" %></span>
                   <% end %>
                 </li>
-                <li><a data-hover="<%= t ".contact_us" %>" href="#"><span><%= t ".contact_us" %></span></a></li>
                 <% if logged_in? %>
                   <li>
                     <%= link_to logout_path, data: {hover: t(".log_out")},
@@ -80,12 +79,16 @@
             </div>
           </nav>
         </div>
-        <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
+        <div class="col-md-4  col-sm-4 col-xs-12 hidden-sm">
           <div class="text-right">
             <button type="button" class="book-now-btn">
               <%= t ".book_now" %>
             </button>
-          </div>
+            <% if logged_in? && is_customer? %>
+              <button type="button" class="book-now-btn">
+                <%= link_to t(".rating"), new_rating_path %>
+              </button>
+            <% end %>
         </div>
       </div>
     </div>

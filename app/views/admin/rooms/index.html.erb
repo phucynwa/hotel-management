@@ -1,7 +1,7 @@
 <% provide :title, t(".rooms_management") %>
 <div class="container">
   <div class="contact-left-block">
-    <h3><%= raw t(".all_users") %></h3>
+    <h3><%= raw t(".all_rooms") %></h3>
     <% if is_admin? %>
       <div class="text-right">
         <%= link_to t(".new_room"), new_admin_room_path,

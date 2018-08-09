@@ -1,0 +1,14 @@
+<table class="table">
+  <% @ratings.each do |rating| %>
+    <tr class="user-row">
+      <td><%= l rating.created_at, format: :short %></td>
+      <td><%= rating.content.gsub(". ", '<br>').html_safe %></td>
+      <% if current_user %>
+      <td class="action-btn">
+        <%= link_to t(".delete"), rating_path(rating), method: :delete,
+          data: {confirm: t(".confirm")}, class: "submit-btn" %>
+      </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

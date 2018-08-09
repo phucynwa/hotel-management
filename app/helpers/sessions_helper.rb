@@ -33,6 +33,10 @@ module SessionsHelper
     current_user&.admin?
   end
 
+  def is_customer?
+    current_user&.customer?
+  end
+
   def forget user
     user.forget
     cookies.delete :user_id

@@ -19,3 +19,4 @@ room_image_mini_size: "80x80"
 room_image_medium_size: "120x120"
 room_image_normal_size: "280x280"
 zero: 0
+rating_form_size: "15x8"

@@ -17,6 +17,7 @@ en:
       setting: "Settings"
       sign_up: "Sign Up"
       book_now: "Book Now"
+      rating: "Rating"
       web_name: "<span>Quat</span>lam"
     footer:
       get_in_touch: "Get in touch"
@@ -69,6 +70,8 @@ en:
     show:
       user_not_exist: "User is not exist"
       not_permission: "You have not permission !"
+      my_ratings: "<span>My</span> Ratings"
+      my_notifications: "<span>My</span> Notifications"
     new:
       sign_up: "Sign Up"
       create: "Create my account"
@@ -103,6 +106,9 @@ en:
       unlock: "Unlock"
       set_staff: "Set Staff"
       unset_staff: "Unset Staff"
+    user_ratings:
+      confirm: "You sure?"
+      delete: "Delete"
   shared:
     error_messages:
       form_error_warning:
@@ -117,6 +123,7 @@ en:
       cates_management: "categories"
       images_management: "images"
       notifications_management: "notifications"
+      ratings_management: "ratings"
     user_board:
       profile: "my profile"
       edit_profile: "edit my profile"
@@ -165,6 +172,20 @@ en:
     edit:
       invalid_activation_link: "Invalid activation link."
       account_activated: "Account activated !"
+  ratings:
+    form:
+      content: "content"
+      post: "Post"
+    new:
+      rating: "<span>Rating</span> Hotel Service"
+    create:
+      success: "Post your feed back successful."
+      warning: "Post your rating error"
+    destroy:
+      success: "Delete your feed back successful."
+      error: "Delete your rating error"
+    load_rating:
+      not_found: "Not found rating with id is %{id}."
   images:
     index:
       manage_image: "Image Management"
@@ -300,6 +321,7 @@ en:
     rooms:
       index:
         rooms_management: "Room Management"
+        all_rooms: "<span>All</span> Rooms"
         id: "ID"
         image: "Image"
         label: "Label"
@@ -367,3 +389,11 @@ en:
         send_fail: "Send notification fail! Please check imformation."
       load_notification:
         not_found: "Not found notification"
+    ratings:
+      index:
+        manage_rating: "All Rating"
+        all_ratings: "<span>All</span> ratings"
+        rating_id: "ID"
+        customer: "Customer"
+        content: "Content"
+        create_at: "Created At"
