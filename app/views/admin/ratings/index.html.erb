@@ -1,0 +1,20 @@
+<% provide :title, t(".manage_rating") %>
+<div class="container">
+  <div class="contact-left-block">
+    <h3><%= raw t(".all_ratings") %></h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t ".rating_id" %></th>
+          <th><%= t ".customer" %></th>
+          <th><%= t ".content" %></th>
+          <th><%= t ".create_at" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @ratings %>
+      </tbody>
+    </table>
+    <%= paginate @ratings, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   resources :rooms, only: %i(index show)
   resources :images, only: :index
+  resources :ratings, except: %i(show update index)
   namespace :admin do
     resources :users, only: %i(index update destroy)
     resources :categories, except: :show
     resources :images, only: %i(index destroy)
     resources :rooms, except: :show
     resources :notifications, except: :show
+    resources :ratings, only: :index
   end
 end

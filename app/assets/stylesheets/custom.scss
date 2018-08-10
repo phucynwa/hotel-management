@@ -161,6 +161,10 @@ form.edit_user {
   margin-bottom: 30px;
 }
 
+textarea {
+    resize: none;
+}
+
 .media {
   border: 1px solid $light-gray;
   .media-body {
