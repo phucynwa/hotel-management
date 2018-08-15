@@ -1,0 +1,18 @@
+<div class="blog-list">
+  <h4><%= t ".booked_at", time: l(booking.updated_at, format: :own) %></h4>
+  <ul>
+    <li><a>
+      <i class="fa fa-caret-right"></i>
+      <%= t ".number_rooms", count: booking.rooms.count %>
+    </a></li>
+    <li><a>
+      <i class="fa fa-caret-right"></i>
+      <%= t ".start_time", time: l(booking.start_time, format: :own) %>
+    </a></li>
+    <li><a>
+      <i class="fa fa-caret-right"></i>
+      <%= t ".end_time", time: l(booking.end_time, format: :own) %>
+    </a></li>
+  </ul>
+  <div class="clearfix"> </div>
+</div>

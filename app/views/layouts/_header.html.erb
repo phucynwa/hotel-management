@@ -81,14 +81,11 @@
         </div>
         <div class="col-md-4  col-sm-4 col-xs-12 hidden-sm">
           <div class="text-right">
-            <button type="button" class="book-now-btn">
-              <%= t ".book_now" %>
-            </button>
+            <%= link_to t(".book_now"), new_booking_path, class: "book-now-btn" %>
             <% if logged_in? && is_customer? %>
-              <button type="button" class="book-now-btn">
-                <%= link_to t(".rating"), new_rating_path %>
-              </button>
+              <%= link_to t(".rating"), new_rating_path, class: "book-now-btn" %>
             <% end %>
+          </div>
         </div>
       </div>
     </div>

@@ -17,28 +17,26 @@ User.create! name: "Staff", email: "staff@gmail.com", phone: "0243 256 2548",
     role: 0
 end
 
-10.times do
-  Category.create! name: Faker::Lorem.characters(5),
-    price: (Random.rand(1000000) / 100) * 100,
-    description: Faker::Lorem.paragraph(5)
-end
+Category.create! name: "VIP Room",
+  price: 5_000_000,
+  description: Faker::Lorem.paragraph(50)
+Category.create! name: "HQ Room",
+  price: 3_000_000,
+  description: Faker::Lorem.paragraph(50)
+Category.create! name: "Normal Room",
+  price: 1_000_000,
+  description: Faker::Lorem.paragraph(50)
+Category.create! name: "Cheap Room",
+  price: 300_000,
+  description: Faker::Lorem.paragraph(50)
 
-40.times do
-  label = Faker::Lorem.characters(5)
-  floor = Random.rand(15) + 1
-  status = Random.rand 3
-  category_id = Random.rand(10) + 1
+70.times do
+  label = Faker::LeagueOfLegends.unique.champion
+  floor = Random.rand(5) + 1
+  status = Random.rand 4
+  category_id = Random.rand(4) + 1
   Room.create! label: label, floor: floor,
     status: status, category_id: category_id
-end
-
-50.times do
-  user_id = Random.rand(50) + 1
-  start_time = Time.zone.now.days_ago(3)
-  end_time = Time.zone.now
-  status = Random.rand 2
-  Booking.create! user_id: user_id, start_time: start_time, end_time: end_time,
-    status: status
 end
 
 50.times do
