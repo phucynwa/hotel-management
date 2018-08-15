@@ -176,8 +176,9 @@ textarea {
   margin-top: 15px;
   height: 35px;
 }
+
 .room-image-wrapper{
-  border: 1px solid $gray;
+  border: 1px solid $light-gray;
   overflow: hidden;
   margin-bottom: 30px;
 }
@@ -186,8 +187,8 @@ textarea {
   position: relative;
 }
 
-.room-info h2, h3 {
-  margin: 5px;
+.room-info {
+  padding: 5px;
 }
 
 .room-info h2 {
@@ -208,6 +209,7 @@ textarea {
 
 .room-info img {
   width: 100%;
+  height: 300px;
 }
 
 .image-rooms-home {
@@ -240,6 +242,7 @@ textarea {
   bottom: 0;
   text-align: center;
   width: 100%;
+  padding-bottom: 60px;
 }
 
 .room-overlay .add-to-cart {
@@ -347,4 +350,13 @@ textarea {
 select, input {
   display: inline;
   width: auto;
+}
+
+.galery {
+  text-align: justify;
+  padding: 30px;
+  .image-galery {
+    height: 250px;
+    width: auto;
+  }
 }

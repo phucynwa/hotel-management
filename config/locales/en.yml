@@ -393,6 +393,9 @@ en:
       destroy:
         success: "Delete image success."
         not_found: "Not found image."
+      room:
+        you_sure: "Are you sure ?"
+        status: "Status"
     bookings:
       booking:
         status: "Status"
@@ -412,6 +415,9 @@ en:
         success: "Booking was successfully updated."
       load_booking:
         not_found: "Not found"
+      booking:
+        you_sure: "Are you sure ?"
+        status: "Status"
     notifications:
       index:
         manage_notification: "Notification Management"
@@ -456,3 +462,27 @@ en:
         customer: "Customer"
         content: "Content"
         create_at: "Created At"
+  bookings:
+    new:
+      title: "Create booking"
+      create_booking_title: "<span>Create</span> Booking"
+      recommend: "<span>Our</span> Recommend"
+    create:
+      create_success: "Create booking success !"
+      create_fail: "Create booking fail !"
+      select_room_require: "Select room you want."
+    booking:
+      booked_at: "Booked at %{time}"
+      number_rooms:
+        zero: "No room."
+        one: "%{count} room"
+        other: "%{count} rooms"
+      start_time: "Start at: %{time}"
+      end_time: "End at: %{time}"
+      status: "Status"
+    edit:
+      title: "Edit booking"
+      edit_booking_title: "<span>Edit</span> Booking"
+      recommend: "<span>Our</span> Recommend"
+    update:
+      booking_updated: "Booking has been updated !"

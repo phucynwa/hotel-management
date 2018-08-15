@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :images, only: :index
   resources :ratings, except: %i(show update index)
   resources :requests, except: %i(index destroy)
-  resources :bookings, only: %i(new create)
+  resources :bookings, except: %i(index destroy show)
   namespace :admin do
     resources :users, only: %i(index update destroy)
     resources :categories, except: :show

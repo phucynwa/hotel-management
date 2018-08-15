@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_075859) do
     t.bigint "user_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer "status"
+    t.integer "status", default: 0
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

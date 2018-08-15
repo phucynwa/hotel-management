@@ -47,7 +47,7 @@ module ApplicationHelper
   end
 
   def all_room
-    Room.all
+    Room.all.page(params[:page]).per Settings.show_rooms
   end
 
   def max_floor
