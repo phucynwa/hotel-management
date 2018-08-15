@@ -1,0 +1,25 @@
+<% provide :title, t(".bookings_management") %>
+<div class="container">
+  <div class="contact-left-block">
+    <h3><%= raw t(".all_bookings") %></h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t ".id" %></th>
+          <th><%= t ".customer" %></th>
+          <th><%= t ".rooms" %></th>
+          <th><%= t ".status" %></th>
+          <th><%= t ".start_time" %></th>
+          <th><%= t ".end_time" %></th>
+          <th><%= t ".amount" %></th>
+          <th><%= t ".updated_at" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @bookings %>
+      </tbody>
+    </table>
+  </div>
+  <%= paginate @bookings, theme: "twitter-bootstrap-3" %>
+</div>

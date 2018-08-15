@@ -21,6 +21,19 @@ module ApplicationHelper
     end
   end
 
+  def type_status_booking status
+    case status.to_sym
+    when :created
+      "info"
+    when :accepted
+      "warning"
+    when :checked_in
+      "danger"
+    when :checked_out
+      "default"
+    end
+  end
+
   def first_image_link room
     if room.images.present?
       room.images.first.image_link
