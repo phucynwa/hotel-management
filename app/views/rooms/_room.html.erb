@@ -1,13 +1,32 @@
-<div class="media">
-  <div class="media-left">
-    <%= image_tag first_image_link(room), class: "media-object", size: Settings.room_image_medium_size %>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading"><%= link_to room.label, room %></h4>
-    <ul>
-      <li><%= room.category.name %></li>
-      <li><%= room.category.price %></li>
-      <li><%= room.floor %></li>
-    </ul>
+<div class="col-sm-4">
+  <div class="room-image-wrapper">
+    <div class="single-rooms">
+      <div class="room-info text-center">
+         <%= image_tag first_image_link(room), class: "media-object",
+          size: Settings.room_image_normal_size %>
+        <h2><%= link_to room.label, room %></h2>
+        <h3><%= room.category.name %></h3>
+        <h3><%= t ".floor", floor: room.floor %></h3>
+        <h2><%= number_to_currency(room.category.price) %></h2>
+        <%= link_to new_booking_path, class: "btn btn-default add-to-cart" do %>
+          <i class="fa fa-shopping-cart"></i> <%= t ".booking_now" %>
+        <% end %>
+      </div>
+      <div class="room-overlay">
+        <div class="overlay-content">
+          <% room.images.each do |image| %>
+            <%= image_tag image.image_link, class: "image-rooms-home",
+              size: Settings.room_image_medium_size %>
+          <% end %>
+          <h2><%= link_to room.label, room %></h2>
+          <h3><%= room.category.name %></h3>
+          <h3><%= t ".floor", floor: room.floor %></h3>
+          <h2><%= number_to_currency(room.category.price) %></h2>
+          <%= link_to new_booking_path, class: "btn btn-default add-to-cart" do %>
+            <i class="fa fa-shopping-cart"></i> <%= t ".booking_now" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

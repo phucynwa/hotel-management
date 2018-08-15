@@ -243,6 +243,8 @@ en:
       rooms: "All rooms"
     room_text:
       book_now: "Book Now"
+    room:
+      floor: "Floor %{floor}"
   admin:
     users:
       index:
@@ -397,3 +399,11 @@ en:
         customer: "Customer"
         content: "Content"
         create_at: "Created At"
+  bookings:
+    new:
+      title: "Create booking"
+      create_booking_title: "<span>Create</span> Booking"
+      recommend: "<span>Our</span> Recommend"
+    create:
+      create_success: "Create booking success !"
+      create_fail: "Create booking fail !"

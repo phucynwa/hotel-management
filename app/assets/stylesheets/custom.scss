@@ -176,3 +176,166 @@ textarea {
   margin-top: 15px;
   height: 35px;
 }
+.room-image-wrapper{
+  border: 1px solid $gray;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.single-rooms {
+  position: relative;
+}
+
+.room-info h2, h3 {
+  margin: 5px 5px 5px 5px;
+}
+
+.room-info h2 {
+  color: $light-pink;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 5px 5px 5px 5px;
+}
+
+.room-info h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: $lighter-pink;
+  margin: 5px 5px 5px 5px;
+}
+
+.room-info img {
+  width: 100%;
+}
+
+.room-info {
+ position:relative;
+}
+
+.room-overlay {
+  background: $light-gray;
+  top: 0;
+  display: none;
+  height: 0;
+  position: absolute;
+  transition: height 500ms ease 0s;
+  width: 100%;
+  display: block;
+}
+
+.single-rooms:hover .room-overlay {
+  display: block;
+  height: 100%;
+}
+
+.room-overlay .overlay-content {
+  bottom: 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.room-overlay .add-to-cart {
+  background: $white;
+  border: 0 none;
+  border-radius: 0;
+  color: $lighter-pink;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.room-overlay .add-to-cart:hover {
+  background: $white;
+  color: $light-pink;
+}
+
+.room-overlay h2{
+  color: $light-pink;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 5px 5px 5px 5px;
+}
+
+.room-overlay h3{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: $light-pink;
+  margin: 5px 5px 5px 5px;
+}
+
+.add-to-cart {
+  background: $light-gold;
+  border: 0 none;
+  border-radius: 0;
+  color: $lighter-pink;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.add-to-cart:hover {
+  background: $orange;
+  border: 0 none;
+  border-radius: 0;
+  color: $white;
+}
+
+.add-to{
+  margin-bottom: 10px;
+}
+
+.add-to-cart i {
+  margin-right: 5px;
+}
+
+.add-to-cart:hover {
+  background: $light-pink;
+  color: $white;
+}
+
+.room-details h1 {
+  color: $red;
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px
+}
+
+.room-details h3 {
+  color: $black;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.room-details h2 {
+  color: $light-pink;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.booking-room {
+  background: $light-pink;
+  border: 0 none;
+  border-radius: 0;
+  color: $light-gold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  margin: 15px 10px 15px 15px;
+}
+
+.booking-room:hover {
+  background: $white;
+  border: 0 none;
+  border-radius: 0;
+  color: $light-pink;
+}
