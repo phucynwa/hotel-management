@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :rooms, only: %i(index show)
   resources :images, only: :index
   resources :ratings, except: %i(show update index)
+  resources :bookings, only: %i(new create)
   namespace :admin do
     resources :users, only: %i(index update destroy)
     resources :categories, except: :show
