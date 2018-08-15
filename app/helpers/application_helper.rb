@@ -33,6 +33,10 @@ module ApplicationHelper
     Category.all
   end
 
+  def all_room
+    Room.all
+  end
+
   def max_floor
     Room.maximum :floor
   end
