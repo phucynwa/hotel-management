@@ -1,0 +1,29 @@
+<tr class="user-row">
+  <td><%= booking.id %></td>
+  <td><%= booking.user.name %></td>
+  <td><%= booking.room_ids %></td>
+  <td>
+    <label class="label label-<%= type_status_booking booking.status %> text-uppercase">
+      <%= booking.status %>
+    </label>
+  </td>
+  <td><%= l booking.start_time, format: :own %></td>
+  <td><%= l booking.end_time, format: :own %></td>
+  <td><%= booking.amount %></td>
+  <td><%= l booking.updated_at, format: :own %></td>
+  <td class="action-btn">
+    <div class="btn-group">
+      <a class="submit-btn dropdown-toggle" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <%= t ".status" %> <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <% @statuses.keys.each do |status| %>
+          <li>
+            <%= link_to status, admin_booking_path(booking, booking: {status: status}), method: :put, class: "text-uppercase" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </td>
+</tr>

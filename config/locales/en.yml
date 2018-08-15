@@ -122,6 +122,7 @@ en:
       users_management: "users"
       cates_management: "categories"
       images_management: "images"
+      bookings_management: "bookings"
       notifications_management: "notifications"
       ratings_management: "ratings"
     user_board:
@@ -353,6 +354,23 @@ en:
       destroy:
         success: "Delete image success."
         not_found: "Not found image."
+    bookings:
+      index:
+        bookings_management: "Booking Management"
+        all_bookings: "<span>All</span> Bookings"
+        id: "ID"
+        customer: "Customer"
+        rooms: "Rooms"
+        status: "Status"
+        start_time: "Start_Time"
+        end_time: "End_Time"
+        amount: "Amount"
+        updated_at: "Update At"
+        action: "Action"
+      update:
+        success: "Booking was successfully updated."
+      load_room:
+        not_found: "Not found"
     notifications:
       index:
         manage_notification: "Notification Management"

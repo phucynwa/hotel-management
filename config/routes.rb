@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :categories, except: :show
     resources :images, only: %i(index destroy)
     resources :rooms, except: :show
+    resources :bookings, except: %i(new create destroy)
     resources :notifications, except: :show
     resources :ratings, only: :index
   end

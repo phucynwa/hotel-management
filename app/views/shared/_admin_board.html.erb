@@ -2,22 +2,24 @@
   <div class="bg-set-col">
     <div class="container">
       <div class="row">
-        <%= render "shared/function", link: admin_rooms_path,
-          name: t(".rooms_management"), icon: "icons/rooms.png" %>
         <%= render "shared/function", link: admin_users_path,
           name: t(".users_management"), icon: "icons/users.png" %>
         <%= render "shared/function", link: admin_categories_path,
           name: t(".cates_management"), icon: "icons/categories.png" %>
-        <%= render "shared/function", link: root_path,
-          name: t(".bills_management"), icon: "icons/bills.png" %>
-        <%= render "shared/function", link: root_path,
-          name: t(".see_analysis"), icon: "icons/analysis.png" %>
+        <%= render "shared/function", link: admin_rooms_path,
+          name: t(".rooms_management"), icon: "icons/rooms.png" %>
         <%= render "shared/function", link: admin_images_path,
           name: t(".images_management"), icon: "icons/images.png" %>
+        <%= render "shared/function", link: admin_bookings_path,
+          name: t(".bookings_management"), icon: "icons/bookings.png" %>
+        <%= render "shared/function", link: root_path,
+          name: t(".bills_management"), icon: "icons/bills.png" %>
         <%= render "shared/function", link: admin_notifications_path,
           name: t(".notifications_management"), icon: "icons/notifications.png" %>
         <%= render "shared/function", link: admin_ratings_path,
           name: t(".ratings_management"), icon: "icons/ratings.png" %>
+        <%= render "shared/function", link: root_path,
+          name: t(".see_analysis"), icon: "icons/analysis.png" %>
       </div>
     </div>
   </div>
