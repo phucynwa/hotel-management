@@ -4,7 +4,7 @@
       <label><%= t ".category" %>:</label>
       <select id="select-category" name="category_id">
         <%= all_category.each do |category| %>
-          <option value="<%= category.id %>"><%= category.name %></option>
+          <option value="<%= category.id %>"><%= category.name %> (<%= number_to_currency category.price %>)</option>
         <% end %>
       </select>
     </div>

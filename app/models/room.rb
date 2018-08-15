@@ -11,4 +11,5 @@ class Room < ApplicationRecord
 
   scope :by_category_id, ->(category_id){where category_id: category_id if category_id.present?}
   scope :by_floor, ->(floor){where floor: floor if floor.present?}
+  scope :by_status, ->(status){where status: status}
 end

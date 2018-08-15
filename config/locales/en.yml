@@ -72,6 +72,7 @@ en:
       not_permission: "You have not permission !"
       my_ratings: "<span>My</span> Ratings"
       my_notifications: "<span>My</span> Notifications"
+      my_bookings: "<span>My</span> Bookings"
     new:
       sign_up: "Sign Up"
       create: "Create my account"
@@ -243,6 +244,9 @@ en:
       rooms: "All rooms"
     room_text:
       book_now: "Book Now"
+    room:
+      floor: "Floor %{floor}"
+      book_now: "Book now"
   admin:
     users:
       index:
@@ -405,3 +409,11 @@ en:
     create:
       create_success: "Create booking success !"
       create_fail: "Create booking fail !"
+    booking:
+      booked_at: "Booked at %{time}"
+      number_rooms:
+        zero: "No room."
+        one: "%{count} room"
+        other: "%{count} rooms"
+      start_time: "Start at: %{time}"
+      end_time: "End at: %{time}"
