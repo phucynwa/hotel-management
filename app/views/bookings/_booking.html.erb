@@ -13,6 +13,16 @@
       <i class="fa fa-caret-right"></i>
       <%= t ".end_time", time: l(booking.end_time, format: :own) %>
     </a></li>
+    <% if booking.accepted?  %>
+      <li>
+        <%= link_to t(".send_request"), new_request_path(booking_id: booking.id), class: "submit-btn" %>
+      </li>
+    <% end %>
   </ul>
   <div class="clearfix"> </div>
 </div>
+<% if booking.accepted?  %>
+  <table class="table">
+    <%= render booking.requests %>
+  </table>
+<% end %>

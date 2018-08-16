@@ -36,7 +36,7 @@ module ApplicationHelper
 
   def first_image_link room
     if room.images.present?
-      room.images.first.image_link
+      room.images.first.image_link.url
     else
       Settings.default_image
     end

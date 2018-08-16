@@ -75,10 +75,12 @@ ActiveRecord::Schema.define(version: 2018_07_25_075859) do
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
+    t.bigint "booking_id"
     t.integer "priority"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_requests_on_booking_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_075859) do
   add_foreign_key "bookings", "users"
   add_foreign_key "images", "rooms"
   add_foreign_key "ratings", "users"
+  add_foreign_key "requests", "bookings"
   add_foreign_key "requests", "users"
   add_foreign_key "rooms", "categories"
 end
