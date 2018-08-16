@@ -18,7 +18,7 @@
       <div class="room-overlay">
         <div class="overlay-content">
           <% room.images.each do |image| %>
-            <%= image_tag image.image_link, class: "image-rooms-home",
+            <%= image_tag image.image_link.url, class: "image-rooms-home",
               size: Settings.room_image_medium_size %>
           <% end %>
           <br>

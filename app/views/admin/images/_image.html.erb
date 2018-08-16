@@ -1,7 +1,7 @@
 <tr>
   <td><%= image.id %></td>
   <td><%= image.room_id %></td>
-  <td><%= image_tag image.image_link, size: Settings.room_image_mini_size %></td>
+  <td><%= image_tag image.image_link.url, size: Settings.room_image_mini_size %></td>
   <td><%= l image.created_at, format: :own %></td>
   <td class="action-btn">
     <%= link_to t(".delete"), admin_image_path(image),

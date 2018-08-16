@@ -1,0 +1,7 @@
+<tr>
+  <td><%= l request.created_at, format: :short %></td>
+  <td><%= request.content.gsub(". ", '<br>').html_safe %></td>
+  <td>
+    <%= link_to t(".edit"), edit_request_path(request, booking_id: request.booking_id) %>
+  </td>
+</tr>

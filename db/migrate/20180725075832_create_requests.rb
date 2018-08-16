@@ -3,8 +3,9 @@ class CreateRequests < ActiveRecord::Migration[5.2]
     create_table :requests do |t|
       t.text :content
       t.references :user, foreign_key: true
+      t.references :booking, foreign_key: true
       t.integer :priority
-      t.integer :status
+      t.integer :status, default: 0
       t.timestamps
     end
   end

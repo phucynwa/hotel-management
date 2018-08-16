@@ -4,6 +4,9 @@ class Admin::RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    Settings.image_quantity.times do
+      @image = @room.images.build
+    end
   end
 
   def create

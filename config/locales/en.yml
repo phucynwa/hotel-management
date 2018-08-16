@@ -248,6 +248,42 @@ en:
     room:
       floor: "Floor %{floor}"
       book_now: "Book now"
+  bookings:
+    new:
+      title: "Create booking"
+      create_booking_title: "<span>Create</span> Booking"
+      recommend: "<span>Our</span> Recommend"
+    create:
+      create_success: "Create booking success !"
+      create_fail: "Create booking fail !"
+    booking:
+      booked_at: "Booked at %{time}"
+      number_rooms:
+        zero: "No room."
+        one: "%{count} room"
+        other: "%{count} rooms"
+      start_time: "Start at: %{time}"
+      end_time: "End at: %{time}"
+  requests:
+    form:
+      priority: "Priority"
+      content: "Content"
+    new:
+      send_request: "Send Request Service"
+      send_request_title: "<span>Send</span> Request Service"
+      send: "Send"
+    create:
+      success: "Send your request service successful."
+      warning: "Send your request service fail. Could you recheck imformation?"
+    edit:
+        edit_request: "Edit Request"
+        save_change: "Save changes"
+        recommend: "<span>Our</span> Recommend"
+        edit_request_title: "<span>Edit</span> Request Service"
+    update:
+      request_update: "Update request service success!"
+    load_request:
+      not_found: "Not found rating with id is %{id}."
   admin:
     users:
       index:
@@ -340,8 +376,6 @@ en:
         new_room: "Create new room"
         recommend: "<span>Our</span> Recommend"
         new_room_title: "<span>New</span> Room"
-      form:
-        status: "Status"
       edit:
         edit_room: "Edit Room"
         save_change: "Save changes"
@@ -351,6 +385,7 @@ en:
         label: "Label"
         floor: "Floor"
         status: "Status"
+        recommend_image: "(You must upload 4 images for room)"
       update:
         success: "Room was successfully updated."
       load_room:
@@ -359,6 +394,8 @@ en:
         success: "Delete image success."
         not_found: "Not found image."
     bookings:
+      booking:
+        status: "Status"
       index:
         bookings_management: "Booking Management"
         all_bookings: "<span>All</span> Bookings"
@@ -373,7 +410,7 @@ en:
         action: "Action"
       update:
         success: "Booking was successfully updated."
-      load_room:
+      load_booking:
         not_found: "Not found"
     notifications:
       index:
@@ -419,19 +456,3 @@ en:
         customer: "Customer"
         content: "Content"
         create_at: "Created At"
-  bookings:
-    new:
-      title: "Create booking"
-      create_booking_title: "<span>Create</span> Booking"
-      recommend: "<span>Our</span> Recommend"
-    create:
-      create_success: "Create booking success !"
-      create_fail: "Create booking fail !"
-    booking:
-      booked_at: "Booked at %{time}"
-      number_rooms:
-        zero: "No room."
-        one: "%{count} room"
-        other: "%{count} rooms"
-      start_time: "Start at: %{time}"
-      end_time: "End at: %{time}"

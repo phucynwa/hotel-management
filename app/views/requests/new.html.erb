@@ -1,0 +1,10 @@
+<% provide :title, t(".send_request") %>
+<% provide :button_text, t(".send") %>
+<div class="container">
+  <div class="col-md-6 contact-left-block">
+  </div>
+  <div class="col-md-6 contact-form">
+    <h3><%= raw t(".send_request_title") %></h3>
+    <%= render "form" %>
+  </div>
+</div>

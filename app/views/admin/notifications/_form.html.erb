@@ -2,7 +2,7 @@
   <%= render "shared/error_messages", object: f.object %>
     <%= f.label :staff_id %>
     <%= f.text_field :staff_id, class: "form-control", value: current_user.id,
-      disabled: true %>
+      readonly: true %>
 
     <%= f.label :customer_id %>
     <%= f.collection_select :customer_id, User.by_role(:customer), :id, :name,

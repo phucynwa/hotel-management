@@ -1,0 +1,15 @@
+<%= form_for @request do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+    <%= f.label :booking_id %><br>
+    <%= f.text_field :booking_id, class: "form-control", readonly: true,
+      value: params[:booking_id] %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control" %>
+
+    <%= f.label :priority %><br>
+    <%= f.select :priority, Request.priorities.keys %><br>
+
+    <%= f.submit yield(:button_text), class: "submit-btn" %>
+<% end %>
