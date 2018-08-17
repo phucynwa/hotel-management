@@ -22,3 +22,6 @@ zero: 0
 rating_form_size: "15x8"
 image_quantity: 4
 min_times: 30
+requests_show: 3
+notifications:
+  per_page: 5

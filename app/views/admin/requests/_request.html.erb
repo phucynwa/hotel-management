@@ -1,0 +1,15 @@
+<tr>
+  <td><%= l request.created_at, format: :short %></td>
+  <td><%= request.content.gsub(". ", '<br>').html_safe %></td>
+  <td>
+    <% if request.created? %>
+      <%= link_to t(".reply"), admin_request_path(request, request: {status: t(".reply")}),
+        method: :put, class: "text-uppercase text-warning" %>
+    <% elsif request.replied? %>
+      <%= link_to t(".close"), admin_request_path(request, request: {status: t(".close")}),
+        method: :put, class: "text-uppercase text-danger" %>
+    <% elsif request.closed? %>
+      <p class="text-uppercase text-success"><%= t(".done") %></p>
+    <% end %>
+  </td>
+</tr>

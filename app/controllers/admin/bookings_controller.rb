@@ -8,7 +8,9 @@ class Admin::BookingsController < ApplicationController
     @statuses = Booking.statuses
   end
 
-  def show; end
+  def show
+    @requests = @booking.requests.page(params[:page]).per Settings.requests_show
+  end
 
   def update
     if @booking.update booking_params

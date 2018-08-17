@@ -1,5 +1,5 @@
 <tr class="user-row">
-  <td><%= booking.id %></td>
+  <td><%= link_to booking.id, admin_booking_path(booking) %></td>
   <td><%= booking.user.name %></td>
   <td><%= booking.room_ids %></td>
   <td>

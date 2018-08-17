@@ -34,7 +34,6 @@
 
 /config/database.yml
 /config/credentials.yml.enc
-app/assets/images/*
 
 config/settings.local.yml
 config/settings/*.local.yml

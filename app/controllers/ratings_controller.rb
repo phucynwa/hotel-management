@@ -1,16 +1,16 @@
 class RatingsController < ApplicationController
-  before_action :logged_in_user
-  before_action :verify_customer, only: :create
+  before_action :logged_in_user, :verify_customer
   before_action :load_rating, only: :destroy
 
   def create
     @rating = current_user.ratings.build rating_params
     if @rating.save
       flash[:success] = t ".success"
+      redirect_to root_url
     else
-      flash[:danger] = t ".waning"
+      flash[:danger] = t ".warning"
+      render :new
     end
-    redirect_to root_url
   end
 
   def destroy
