@@ -50,6 +50,10 @@ module ApplicationHelper
     Room.all.page(params[:page]).per Settings.show_rooms
   end
 
+  def all_room_available
+    Room.all.not_maintenance
+  end
+
   def max_floor
     Room.maximum :floor
   end

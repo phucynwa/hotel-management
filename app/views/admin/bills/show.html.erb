@@ -1,0 +1,91 @@
+<div id="print-bill" class="invoice-box">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="2">
+        <table>
+          <tr>
+            <td class="title">
+              <%= raw t("layouts.header.web_name") %>
+            </td>
+            <td>
+              <%= t ".invoice" %><%= @bill.code %><br>
+              <%= t ".created" %><%= l @bill.updated_at, format: :own %><br>
+              <%= t ".due" %><%= l Time.zone.now, format: :own %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr class="information">
+      <td colspan="2">
+        <table>
+          <tr>
+            <td>
+              <%= t "layouts.footer.address" %><br>
+              <%= t "layouts.footer.phone" %><br>
+              <%= t "layouts.footer.email" %>
+            </td>
+            <td>
+              <%= @bill.booking.user.name %><br>
+              <%= @bill.booking.user.phone %><br>
+              <%= @bill.booking.user.email %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr class="heading">
+      <td>
+        <%= t ".item" %>
+      </td>
+      <td>
+        <%= t ".price" %>
+      </td>
+    </tr>
+    <tr class="item">
+      <td>
+        <%= t ".room_booking" %>
+      </td>
+      <td>
+        <%= number_to_currency @room_amount %>
+      </td>
+    </tr>
+    <% if @service_amount > 0 %>
+      <tr class="item last">
+        <td>
+          <%= t ".bonus_service" %>
+        </td>
+        <td>
+          <%= number_to_currency @service_amount %>
+        </td>
+      </tr>
+    <% end %>
+    <tr class="total">
+      <td></td>
+      <td>
+       <%= t ".total" %><%= number_to_currency @bill.booking.amount %>
+     </td>
+    </tr>
+    <tr><br></tr>
+    <tr>
+      <td class="text-center">
+        <%= t ".staff" %>
+        <br>
+        <br>
+        <br>
+        <p>
+          <%= current_user.name %>
+        </p>
+      </td>
+      <td class="text-left">
+        <%= t ".customer" %>
+        <br>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="text-center">
+  <button id="print-button" class="submit-btn">
+    <li class="fa fa-print"></li> <%= t ".print" %>
+  </button>
+</div>

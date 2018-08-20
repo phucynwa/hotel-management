@@ -13,8 +13,11 @@ class Admin::BookingsController < ApplicationController
   end
 
   def update
-    if @booking.update booking_params
+    if @booking.update_attributes booking_params
       flash[:success] = t ".success"
+      redirect_to admin_bookings_path
+    else
+      flash[:warning] = t ".fail"
       redirect_to admin_bookings_path
     end
   end

@@ -440,6 +440,30 @@ en:
       booking:
         you_sure: "Are you sure ?"
         status: "Status"
+    bills:
+      booking_not_check_in: "This booking hasn't checked in yet."
+      index:
+        bills_management: "Bills management"
+        all_bills: "<span>All</span> Bills"
+      new:
+        create_bill: "Create bill"
+        create: "Create & Export"
+        create_bill_title: "<span>Create</span> Bill"
+      create:
+        recheck: "Please recheck bill information !"
+      show:
+        invoice: "Invoice #"
+        created: "Created at "
+        due: "Due at "
+        item: "Item"
+        price: "Price"
+        room_booking: "Room booking"
+        bonus_service: "Bonus service"
+        total: "Total: "
+        staff: "Staff export bill"
+        customer: "Customer"
+      bill:
+        export: "Export"
     notifications:
       index:
         manage_notification: "Notification Management"

@@ -1,0 +1,8 @@
+<tr>
+  <td><%= bill.id %></td>
+  <td><%= bill.code %></td>
+  <td><%= bill.booking.id %></td>
+  <td><%= link_to bill.booking.user.name, bill.booking.user, class: "link" %></td>
+  <td><%= bill.booking.amount %></td>
+  <td class="action-btn"><%= link_to t(".export"), admin_bill_path(bill), class: "submit-btn" %></td>
+</tr>

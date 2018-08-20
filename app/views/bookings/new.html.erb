@@ -8,7 +8,7 @@
     <%= form_for @booking do |f| %>
       <%= f.label :rooms %><br>
       <div class="row">
-        <% all_room.each do |room| %>
+        <% all_room_available.each do |room| %>
           <div class="col-md-3">
             <input type="checkbox" name="rooms[]" value="<%= room.id %>"
             <%= " checked" if room.id == params[:id].to_i %>>

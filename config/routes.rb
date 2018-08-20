@@ -23,5 +23,6 @@ Rails.application.routes.draw do
     resources :notifications, except: :show
     resources :ratings, only: :index
     resources :requests, only: %i(show edit update)
+    resources :bills, except: %i(edit update destroy)
   end
 end

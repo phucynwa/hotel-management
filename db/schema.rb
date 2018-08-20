@@ -15,9 +15,11 @@ ActiveRecord::Schema.define(version: 2018_07_25_075859) do
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code"
     t.bigint "booking_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_bills_on_booking_id"
+    t.index ["user_id"], name: "index_bills_on_user_id"
   end
 
   create_table "booking_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -112,6 +114,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_075859) do
   end
 
   add_foreign_key "bills", "bookings"
+  add_foreign_key "bills", "users"
   add_foreign_key "booking_details", "bookings"
   add_foreign_key "booking_details", "rooms"
   add_foreign_key "bookings", "users"
