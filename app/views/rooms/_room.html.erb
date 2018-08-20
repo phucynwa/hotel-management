@@ -2,18 +2,18 @@
   <div class="room-image-wrapper">
     <div class="single-rooms">
       <div class="room-info text-center">
-        <%= image_tag first_image_link(room), class: "media-object",
-          size: Settings.room_image_normal_size %>
-        <h2><%= link_to room.label, room %></h2>
+        <%= image_tag first_image_link(room), class: "media-object" %>
+        <h2>
+          <%= link_to room.label, room %>
+        </h2>
+        <label class="label label-<%= class_type room.status %> text-uppercase">
+          <%= room.status %>
+        </label>
         <h3><%= room.category.name %></h3>
         <div class="text-center">
           <b><%= t ".floor", floor: room.floor %></b><br>
           <b><%= number_to_currency room.category.price %></b>
         </div>
-        <hr>
-        <%= link_to new_booking_path, class: "submit-btn" do %>
-          <i class="fa fa-shopping-cart"></i> <%= t ".book_now" %>
-        <% end %>
       </div>
       <div class="room-overlay">
         <div class="overlay-content">
@@ -22,7 +22,7 @@
               size: Settings.room_image_medium_size %>
           <% end %>
           <br>
-          <%= link_to new_booking_path, class: "submit-btn" do %>
+          <%= link_to new_booking_path(id: room.id), class: "submit-btn"  do %>
             <i class="fa fa-shopping-cart"></i> <%= t ".book_now" %>
           <% end %>
         </div>

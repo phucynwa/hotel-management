@@ -4,16 +4,16 @@
     <h3><%= raw t(".recommend") %></h3>
   </div>
   <div class="col-md-6 contact-form">
-    <h3><%= raw t(".create_booking_title") %></h3>
+    <h3><%= raw t(".edit_booking_title") %></h3>
     <%= form_for @booking do |f| %>
       <%= f.label :rooms %><br>
       <div class="row">
         <% all_room.each do |room| %>
-          <div class="col-md-3">
-            <input type="checkbox" name="rooms[]" value="<%= room.id %>"
-            <%= " checked" if room.id == params[:id].to_i %>>
-            <%= room.label %>
-          </div>
+        <div class="col-md-3">
+          <input type="checkbox" name="rooms[]" value="<%= room.id %>"
+          <%= " checked" if @booking.rooms.include?(room) %>>
+          <%= room.label %>
+        </div>
         <% end %>
       </div>
       <br>

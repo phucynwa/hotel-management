@@ -1,16 +1,18 @@
 <%= form_tag rooms_path, remote: true, method: :get, id: "search-rooms" do %>
   <div class="row">
-    <div class="col-md-6">
-      <label><%= t ".category" %>:</label>
+    <div class="col-md-2">
+      <label><%= t ".category" %>:</label><br>
       <select id="select-category" name="category_id">
-        <%= all_category.each do |category| %>
-          <option value="<%= category.id %>"><%= category.name %> (<%= number_to_currency category.price %>)</option>
+        <option value=""><%= t ".all_categories" %></option>
+        <% all_category.each do |category| %>
+          <option value="<%= category.id %>"><%= category.name %></option>
         <% end %>
       </select>
     </div>
-    <div class="col-md-6">
-      <label><%= t ".floor" %>:</label>
+    <div class="col-md-2">
+      <label><%= t ".floor" %>:</label><br>
       <select id="select-floor" name="floor">
+        <option value=""><%= t ".all_floors" %></option>
         <% max_floor.times do |i| %>
           <option value="<%= i + 1 %>"><%= t ".floor" %> <%= i + 1 %></option>
         <% end %>
@@ -18,5 +20,11 @@
     </div>
   </div>
 <% end %>
-<hr>
-<div id="search-rooms-result"></div>
+<div id="search-rooms-result">
+  <div class="row">
+    <%= render rooms %>
+  </div>
+  <div class="row">
+    <%= paginate rooms, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

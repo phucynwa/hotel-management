@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('#back-to-top').fadeIn();
@@ -10,11 +10,7 @@ $(document).ready(function () {
     $('html, body').animate({scrollTop: 0}, 600);
     return false;
   });
-  $('#select-category').change(function() {
-    $('#search-rooms').submit();
-  });
-
-  $('#select-floor').change(function() {
+  $('#search-rooms select').change(function() {
     $('#search-rooms').submit();
   });
 });

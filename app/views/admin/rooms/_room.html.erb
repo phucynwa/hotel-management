@@ -7,6 +7,9 @@
     <%= image_tag first_image_link(room), class: "circle", size: Settings.gravatar_tiny_size %>
   </td>
   <td>
+    <%= room.category.name %>
+  </td>
+  <td>
     <label class="label label-<%= class_type room.status %> text-uppercase">
       <%= room.status %>
     </label>
@@ -19,9 +22,9 @@
         <%= t ".status" %> <span class="caret"></span>
       </a>
       <ul class="dropdown-menu">
-        <% @statuses.each do |status| %>
+        <% @statuses.keys.each do |status| %>
           <li>
-            <%= link_to status[0], admin_room_path(room, room: {status: status[0]}),
+            <%= link_to status, admin_room_path(room, room: {status: status}),
               method: :put, class: "text-uppercase" %>
           </li>
         <% end %>
