@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_075859) do
     t.bigint "user_id"
     t.bigint "booking_id"
     t.integer "priority"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_requests_on_booking_id"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_075859) do
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "label"
     t.integer "floor"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

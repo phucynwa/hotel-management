@@ -41,21 +41,6 @@ end
 
 50.times do
   user_id = Random.rand(50) + 1
-  booking_id = Random.rand(50) + 1
-  content = Faker::Lorem.sentence
-  status = 1
-  priority = Random.rand(4) + 1
-  Request.create! user_id: user_id, booking_id: booking_id, content: content, status: status, priority: priority
-end
-
-50.times do
-  user_id = Random.rand(50) + 1
   content = Faker::Lorem.sentence
   Rating.create! user_id: user_id, content: content
-end
-
-rooms = Room.order(:created_at).take 70
-4.times do
-  image_link = "https://upload.wikimedia.org/wikipedia/commons/5/5f/Ha_Long_bay_The_Kissing_Rocks.jpg"
-  rooms.each {|room| room.images.create! image_link: image_link}
 end

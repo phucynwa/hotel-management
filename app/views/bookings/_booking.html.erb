@@ -1,5 +1,10 @@
 <div class="blog-list">
-  <h4><%= t ".booked_at", time: l(booking.updated_at, format: :own) %></h4>
+  <h4>
+    <%= t ".booked_at", time: l(booking.updated_at, format: :own) %>
+    <% if booking.accepted? || booking.checked_in? %>
+      <%= link_to t(".send_request"), new_request_path(booking_id: booking.id), class: "submit-btn" %>
+    <% end %>
+  </h4>
   <ul>
     <li><a>
       <i class="fa fa-caret-right"></i>
@@ -13,16 +18,14 @@
       <i class="fa fa-caret-right"></i>
       <%= t ".end_time", time: l(booking.end_time, format: :own) %>
     </a></li>
-    <% if booking.accepted?  %>
+    <% if booking.accepted? || booking.checked_in? %>
+      <li><%= t ".booking_request" %></li>
       <li>
-        <%= link_to t(".send_request"), new_request_path(booking_id: booking.id), class: "submit-btn" %>
+        <table class="table">
+          <%= render booking.requests %>
+        </table>
       </li>
     <% end %>
   </ul>
   <div class="clearfix"> </div>
 </div>
-<% if booking.accepted?  %>
-  <table class="table">
-    <%= render booking.requests %>
-  </table>
-<% end %>

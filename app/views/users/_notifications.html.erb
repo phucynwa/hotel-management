@@ -5,4 +5,6 @@
       <td><%= notification.content.gsub(". ", '<br>').html_safe %></td>
     </tr>
   <% end %>
+  <%= paginate @notifications, theme: "twitter-bootstrap-3" %>
 </table>
+

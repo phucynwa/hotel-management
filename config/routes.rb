@@ -22,6 +22,6 @@ Rails.application.routes.draw do
     resources :bookings, except: %i(new create destroy)
     resources :notifications, except: :show
     resources :ratings, only: :index
-    resources :requests, only: :index
+    resources :requests, only: %i(show edit update)
   end
 end

@@ -10,7 +10,7 @@
 <div class="container">
   <div class="galery">
     <% @room.images.each do |image| %>
-      <%= image_tag image.image_link, class: "image-galery" %>
+      <%= image_tag image.image_link.url, class: "image-galery" %>
     <% end %>
   </div>
 </div>

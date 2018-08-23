@@ -1,6 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :logged_in_user
-  before_action :verify_customer, only: :create
+  before_action :logged_in_user, :verify_customer
   before_action :load_request, only: %i(edit update)
 
   def new
@@ -17,8 +16,6 @@ class RequestsController < ApplicationController
       redirect_to new_request_path
     end
   end
-
-  def show; end
 
   def edit; end
 

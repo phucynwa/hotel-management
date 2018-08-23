@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_secure_password
   scope :by_role, ->(role){where role: role}
+  scope :get_notifications, ->(user_id){select("notifications.content, notifications.created_at")
+    .joins("INNER JOIN notifications ON users.id = notifications.customer_id ")
+    .where(id: user_id)
+    .order("notifications.created_at desc")}
 
   attr_accessor :remember_token, :reset_token, :activation_token
 

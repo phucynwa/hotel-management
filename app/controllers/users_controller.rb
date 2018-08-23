@@ -47,9 +47,8 @@ class UsersController < ApplicationController
   end
 
   def load_notifitions
-    @notifications = User.select("notifications.content, notifications.created_at")
-      .joins("INNER JOIN notifications ON users.id = notifications.customer_id ")
-      .where id: current_user.id
+    @notifications = User.get_notifications(current_user.id).page(params[:page])
+      .per Settings.notifications.per_page
   end
 
   def hide_other_customers

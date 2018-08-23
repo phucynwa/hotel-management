@@ -256,6 +256,7 @@ en:
     create:
       create_success: "Create booking success !"
       create_fail: "Create booking fail !"
+      select_room_require: "Select room you want."
     booking:
       booked_at: "Booked at %{time}"
       number_rooms:
@@ -264,7 +265,17 @@ en:
         other: "%{count} rooms"
       start_time: "Start at: %{time}"
       end_time: "End at: %{time}"
+      status: "Status"
+    edit:
+      title: "Edit booking"
+      edit_booking_title: "<span>Edit</span> Booking"
+      recommend: "<span>Our</span> Recommend"
+    update:
+      booking_updated: "Booking has been updated !"
   requests:
+    request:
+      done: "done"
+      edit_request: "Edit Request"
     form:
       priority: "Priority"
       content: "Content"
@@ -276,10 +287,10 @@ en:
       success: "Send your request service successful."
       warning: "Send your request service fail. Could you recheck imformation?"
     edit:
-        edit_request: "Edit Request"
-        save_change: "Save changes"
-        recommend: "<span>Our</span> Recommend"
-        edit_request_title: "<span>Edit</span> Request Service"
+      edit_request: "Edit Request"
+      save_change: "Save changes"
+      recommend: "<span>Our</span> Recommend"
+      edit_request_title: "<span>Edit</span> Request Service"
     update:
       request_update: "Update request service success!"
     load_request:
@@ -411,6 +422,17 @@ en:
         amount: "Amount"
         updated_at: "Update At"
         action: "Action"
+      show:
+        booked_by: "Booked by %{name}"
+        booked_at: "Booked at %{time}"
+        send_request: "Send Request Service"
+        booking_request: "Booking's Request"
+        number_rooms:
+          zero: "No room."
+          one: "%{count} room"
+          other: "%{count} rooms"
+        start_time: "Start at: %{time}"
+        end_time: "End at: %{time}"
       update:
         success: "Booking was successfully updated."
       load_booking:
@@ -462,27 +484,15 @@ en:
         customer: "Customer"
         content: "Content"
         create_at: "Created At"
-  bookings:
-    new:
-      title: "Create booking"
-      create_booking_title: "<span>Create</span> Booking"
-      recommend: "<span>Our</span> Recommend"
-    create:
-      create_success: "Create booking success !"
-      create_fail: "Create booking fail !"
-      select_room_require: "Select room you want."
-    booking:
-      booked_at: "Booked at %{time}"
-      number_rooms:
-        zero: "No room."
-        one: "%{count} room"
-        other: "%{count} rooms"
-      start_time: "Start at: %{time}"
-      end_time: "End at: %{time}"
-      status: "Status"
-    edit:
-      title: "Edit booking"
-      edit_booking_title: "<span>Edit</span> Booking"
-      recommend: "<span>Our</span> Recommend"
-    update:
-      booking_updated: "Booking has been updated !"
+    requests:
+      request:
+        reply: "replied"
+        close: "closed"
+        done: "done"
+        status: "Status"
+      update:
+        send_notification: "Your request service %{content} have been process!"
+        send_notification2: "Your request service %{content} have been done!"
+        success: "Update request service success!"
+      load_request:
+        not_found: "Not found request service"
