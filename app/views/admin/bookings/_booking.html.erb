@@ -24,6 +24,7 @@
           </li>
         <% end %>
       </ul>
+      <%= link_to "export bill", new_admin_bill_path(bill: {booking_id: booking.id}), method: :get, class: "submit-btn" %>
     </div>
   </td>
 </tr>

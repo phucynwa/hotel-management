@@ -1,9 +1,8 @@
 class Booking < ApplicationRecord
   enum status: {created: 0, accepted: 1, checked_in: 2, checked_out: 3}
-  before_validation :check_rooms_free, :check_time
+  before_create :check_rooms_free, :check_time
 
   belongs_to :user
-  has_one :bill
   has_many :requests
   has_many :booking_details
   has_many :rooms, through: :booking_details
@@ -14,8 +13,8 @@ class Booking < ApplicationRecord
 
   def check_rooms_free
     self.rooms.each do |room|
-      if Booking.by_room(room).by_status(:accepted).select(:start_time, :end_time)
-        .where("(start_time BETWEEN ? AND ? OR end_time BETWEEN ? AND ?) OR ? BETWEEN start_time AND end_time",
+      if room.bookings.by_status :accepted
+        .where("((start_time BETWEEN ? AND ?) OR (end_time BETWEEN ? AND ?)) OR (? BETWEEN start_time AND end_time)",
           self.start_time, self.end_time, self.start_time, self.end_time, self.start_time).present?
         errors[:base] << I18n.t("bookings.create.warning")
         throw :abort
@@ -27,5 +26,13 @@ class Booking < ApplicationRecord
     return if (start_time >= Time.now) && (end_time - start_time).minutes > Settings.min_times
     errors[:base] << I18n.t("bookings.create.warning")
     throw :abort
+  end
+
+  def calculate amount
+    amount = 0
+    self.rooms.each do |room|
+      amount += room.category.price
+    end
+    return amount
   end
 end

@@ -21,7 +21,7 @@ class Admin::RoomsController < ApplicationController
   end
 
   def index
-    @rooms = Room.all.order(:status).page(params[:page]).per Settings.show
+    @rooms = Room.all.order(:id).page(params[:page]).per Settings.show
     @statuses = Room.statuses
   end
 

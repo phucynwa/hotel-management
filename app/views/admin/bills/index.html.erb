@@ -1,0 +1,22 @@
+<% provide :title, t(".bills_management") %>
+<div class="container">
+  <div class="contact-left-block">
+    <h3><%= raw t(".all_bills") %></h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t ".id" %></th>
+          <th><%= t ".code" %></th>
+          <th><%= t ".booking_id" %></th>
+          <th><%= t ".customer" %></th>
+          <th><%= t ".amount" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @bills %>
+      </tbody>
+    </table>
+  </div>
+  <%= paginate @bills, theme: "twitter-bootstrap-3" %>
+</div>

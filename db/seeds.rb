@@ -33,7 +33,7 @@ Category.create! name: "Cheap Room",
 70.times do
   label = Faker::LeagueOfLegends.unique.champion
   floor = Random.rand(5) + 1
-  status = Random.rand 4
+  status = 0
   category_id = Random.rand(4) + 1
   Room.create! label: label, floor: floor,
     status: status, category_id: category_id

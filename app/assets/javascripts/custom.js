@@ -13,4 +13,9 @@ $(document).on('turbolinks:load', function () {
   $('#search-rooms select').change(function() {
     $('#search-rooms').submit();
   });
+  $('#print-button').on('click', function() {
+    $('#print-bill').siblings().hide();
+    window.print();
+    $('#print-bill').siblings().show();
+  });
 });

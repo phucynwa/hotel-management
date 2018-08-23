@@ -13,4 +13,9 @@
       <%= image_tag image.image_link.url, class: "image-galery" %>
     <% end %>
   </div>
+  <div class="text-center">
+    <%= link_to new_booking_path(id: @room.id), class: "submit-btn"  do %>
+      <i class="fa fa-shopping-cart"></i> <%= t ".book_now" %>
+    <% end %>
+  </div>
 </div>

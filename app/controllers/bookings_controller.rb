@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
       @booking.transaction do
         @booking.user = current_user
         @booking.rooms << Room.find(params[:rooms])
+        @booking.amount = @booking.calculate_amount
         if @booking.save
           flash[:success] = t ".create_success"
           redirect_to root_path
