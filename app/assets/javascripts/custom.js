@@ -18,4 +18,9 @@ $(document).on('turbolinks:load', function () {
     window.print();
     $('#print-bill').siblings().show();
   });
+  $('.datepicker').datepicker({
+    format: 'mm-yyyy',
+    viewMode: 'months',
+    minViewMode: 'months'
+  });
 });

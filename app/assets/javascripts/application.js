@@ -18,3 +18,4 @@
 //= require turbolinks
 //= require_tree .
 //= require custom.js
+//= require bootstrap-datepicker

@@ -445,6 +445,9 @@ en:
       index:
         bills_management: "Bills management"
         all_bills: "<span>All</span> Bills"
+        filter: "Filter"
+        month: "Month:"
+        year: "Year:"
       new:
         create_bill: "Create bill"
         create: "Create & Export"

@@ -28,7 +28,7 @@ class Booking < ApplicationRecord
     throw :abort
   end
 
-  def calculate amount
+  def calculate_amount
     amount = 0
     self.rooms.each do |room|
       amount += room.category.price

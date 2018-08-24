@@ -6,7 +6,7 @@ class Admin::BillsController < ApplicationController
   before_action :create_bill_code, only: :new
 
   def index
-    @bills = Bill.by_month_year(params[:month], params[:year])
+    @bills = Bill.by_month_year(params[:month_year])
       .page(params[:page]).per Settings.users.per_page
   end
 

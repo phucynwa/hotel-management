@@ -19,4 +19,10 @@
     </table>
   </div>
   <%= paginate @bills, theme: "twitter-bootstrap-3" %>
+  <form>
+    <label><%= t ".month"%></label>
+    <input type="text" name="month_year" class="form-control datepicker"
+      value="<%= params[:month_year] %>">
+    <input type="submit" value="<%= t ".filter" %>" class="submit-btn">
+  </form>
 </div>

@@ -57,4 +57,10 @@ module ApplicationHelper
   def max_floor
     Room.maximum :floor
   end
+
+  def datepicker_input field
+    content_tag :td, data: {provide: "datepicker", "date-format": "mm-yyyy", "date-autoclose": "true"} do
+      text_field field, class: "form-control", placeholder: "mm-yyyy"
+    end
+  end
 end
